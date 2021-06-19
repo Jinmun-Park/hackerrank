@@ -81,7 +81,6 @@ if __name__ == '__main__':
     print('\n'.join(sorted([name for name, score in score_list if score == second_highest])))
     
 #############################################################################################################
-    
 '''
 Basic Data Type
 List
@@ -128,7 +127,65 @@ if __name__ == '__main__':
             the_list.reverse()
 
 #############################################################################################################
+'''
+String
+Merge the Tools!
 
+Sample Input 0
+STDIN       Function
+-----       --------
+AABCAAADA   s = 'AABCAAADA'
+3           k = 3
+
+Sample Output 0
+AB
+CA
+AD
+'''
+from collections import OrderedDict
+
+def merge_the_tools(string, k):
+    for i in range(0, len(string), k): #0,3,6
+        print(''.join(OrderedDict.fromkeys(string[i:i + k])))
+#############################################################################################################   
+'''
+Collections
+Collections.OrderedDict()
+
+Sample Input 0
+9
+BANANA FRIES 12
+POTATO CHIPS 30
+APPLE JUICE 10
+CANDY 5
+APPLE JUICE 10
+CANDY 5
+CANDY 5
+CANDY 5
+POTATO CHIPS 30
+
+Sample Output 0
+BANANA FRIES 12
+POTATO CHIPS 60
+APPLE JUICE 20
+CANDY 20
+'''
+from collections import*;
+N = int(input());
+d = OrderedDict();
+
+for i in range(N):
+    item = input().split()
+    itemPrice = int(item[-1]) # last array [12, 30, 10,,,]
+    itemName = " ".join(item[:-1]) # Everything excel last array
+    if(d.get(itemName)): # Filter the same, filter out
+        d[itemName] += itemPrice
+    else:
+        d[itemName] = itemPrice
+        
+for i in d.keys():
+    print(i, d[i])
+#############################################################################################################
 '''
 Sets
 Symmetric Difference
@@ -359,7 +416,7 @@ Sample Output
 print(a**b+c**d)
 #############################################################################################################
 '''   
-Math
+Itertools
 Integers Come In All Sizes
 
 Sample Input
@@ -378,4 +435,154 @@ output = product(a,b)
 
 for i in output:
     print(i, end = " ");
+#############################################################################################################
+'''   
+Itertools
+Integers Come In All Sizes
+
+Sample Input
+HACK 2
+
+Sample Output
+AC
+AH
+AK
+CA
+CH
+CK
+HA
+HC
+HK
+KA
+KC
+KH  
+
+Sample Output
+A
+C
+H
+K
+AC
+AH
+AK
+CH
+CK
+HK
+
+Sample Output
+AA
+AC
+AH
+AK
+CC
+CH
+CK
+HH
+HK
+KK
+'''
+from itertools import permutations
+S = list(input().split())
+
+for i in sorted(permutations(S[0], int(S[1]))): #permutations has different way to laydown datasets
+    print(''.join(i)) 
+#############################################################################################################
+from itertools import combinations
+
+input = input().split()
+S = input[0]
+k = int(input[1])
+
+for i in range(1,k+1): #combinations has different way to laydown datasets
+    for j in combinations(sorted(S),i): # all possible combinations (= at least)
+        print("".join(j))
+        
+from itertools import combinations_with_replacement
+lis = input().split(' ')
+#############################################################################################################
+for i in combinations_with_replacement(sorted(lis[0]), int(lis[1])):
+    print(''.join(i))
+#############################################################################################################
+
+'''   
+Itertools
+Integers Come In All Sizes
+
+Sample Input
+1222311
+
+Sample Output
+(1, 1) (3, 2) (1, 3) (2, 1)
+'''
+from itertools import *
+
+io = input()
+
+for i,j in groupby(map(int,list(io))):
+    print(tuple([len(list(j)), i]) ,end = " ") # This is tuple
+#############################################################################################################
+'''
+Collection
+collections.Counter()
+
+Sample Input
+10
+2 3 4 5 6 8 7 6 5 18
+6
+6 55
+6 45
+6 55
+4 40
+18 60
+10 50
+
+Sample Output
+200
+'''
+
+from collections import Counter
+X = int(input())
+key = Counter(map(int,input().split()))
+N = int(input())
+
+earnings = 0
+for customer in range(N): #{5: 2, 6: 2, 2: 1, 3: 1, 4: 1, 8: 1, 7: 1, 18: 1}
+    size, x_i = map(int,input().split()) # bring the list (6,55) -> size=6, x_i=55
+    if size in key and key[size] > 0: 
+        key[size] -= 1 # size limitation with the count 
+        earnings += x_i
+            
+print(earnings)
+
+#############################################################################################################
+'''
+Collection
+collections.namedtuple()
+
+Sample Input
+5
+ID         MARKS      NAME       CLASS     
+1          97         Raymond    7         
+2          50         Steven     4         
+3          91         Adrian     9         
+4          72         Stewart    5         
+5          80         Peter      6   
+
+Sample Output
+78.00
+'''
+from collections import namedtuple
+
+n = int(input())
+fields = input().split()
+
+total_marks = 0
+
+for _ in range(n):
+    students = namedtuple('student', fields)
+    MARKS, CLASS, NAME, ID = input().split() #bring the list
+    student = students(MARKS, CLASS, NAME, ID)
+    total_marks += int(student.MARKS)
+print('{:.2f}'.format(total_marks / n))
+
 #############################################################################################################
