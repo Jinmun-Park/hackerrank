@@ -254,4 +254,128 @@ for i in range(num):
     else :
         s.pop()
 print(sum(list(s)))
+#############################################################################################################   
+ '''   
+Sets
+Set Mutations16
+
+Sample Input
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 24 52
+4
+intersection_update 10
+2 3 5 6 8 9 1 4 7 11
+update 2
+55 66
+symmetric_difference_update 5
+22 7 35 62 58
+difference_update 7
+11 22 35 55 58 62 66
+'''
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+n1 = int(input()) # This sometimes needs to be int(), not need int()
+set1 = set(map(int, input().split()))
+n2 = int(input())
+
+for i in range(n2):
+    query = input().split()
+    if query[0] == 'intersection_update':
+        temp_storage = set(map(int, input().split()))
+        set1.intersection_update(temp_storage)
+    elif query[0] == 'update':
+        temp_storage = set(map(int, input().split()))
+        set1.update(temp_storage)
+    elif query[0] == 'symmetric_difference_update':
+        temp_storage = set(map(int, input().split()))
+        set1.symmetric_difference_update(temp_storage)
+    elif query[0] == 'difference_update':
+        temp_storage = set(map(int, input().split()))
+        set1.difference_update(temp_storage)
+    else :
+        assert False
     
+print(sum(set1))        
+#############################################################################################################
+'''   
+Sets
+Set Mutations16
+
+Sample Input
+5
+1 2 3 6 5 4 4 2 5 3 6 1 6 5 3 2 4 1 2 5 1 4 3 6 8 4 3 1 5 6 2 
+
+Sample Output
+8
+'''
+N = int(input())
+
+storage = map(int, input().split())
+storage = sorted(storage)
+
+for i in range(len(storage)):
+    if(i != len(storage)-1):
+        if(storage[i]!=storage[i-1] and storage[i]!=storage[i+1]):
+            print(storage[i])
+            break;
+    else:
+        print(storage[i])
+#############################################################################################################
+'''   
+Sets
+Check Strict Superset
+
+Sample Input
+1 2 3 4 5 6 7 8 9 10 11 12 23 45 84 78 
+2
+1 2 3 4 5
+100 11 12
+
+Sample Output
+False
+'''
+storage = set(input().split())
+N = int(input())
+output = True
+
+for i in range(N):
+    storage2 = set(input().split()) # By setting this, 2 input can be stored inside this loop
+    if not storage2.issubset(storage):
+        output = False
+
+print(output)
+#############################################################################################################
+'''   
+Math
+Integers Come In All Sizes
+Sample Input
+9
+29
+7
+27
+
+Sample Output
+4710194409608608369201743232  
+'''
+print(a**b+c**d)
+#############################################################################################################
+'''   
+Math
+Integers Come In All Sizes
+
+Sample Input
+ 1 2
+ 3 4
+AxB = [(1, 3), (1, 4), (2, 3), (2, 4)]
+
+Sample Output
+ (1, 3) (1, 4) (2, 3) (2, 4)  
+'''
+from itertools import product
+a=list(map(int, input().split())) # Now we have list(), not set()
+b=list(map(int, input().split()))
+
+output = product(a,b)
+
+for i in output:
+    print(i, end = " ");
+#############################################################################################################
