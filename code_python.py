@@ -44,7 +44,6 @@ if __name__ == '__main__':
     print(arr[ar-2])
     
 #############################################################################################################
-
 '''
 Basic Data Type (Easy ~ Medium)
 Nested Lists
@@ -79,6 +78,42 @@ if __name__ == '__main__':
         
     second_highest = sorted(set([score for name, score in score_list]))[1]
     print('\n'.join(sorted([name for name, score in score_list if score == second_highest])))
+    
+#############################################################################################################
+
+'''
+Built-Ins
+Athlete Sort
+
+Sample Input 0
+5 3 #m/n
+10 2 5
+7 1 0
+9 9 9
+1 23 12
+6 5 9
+1 #k
+
+Sample Output 0
+7 1 0
+10 2 5
+6 5 9
+9 9 9
+1 23 12
+'''
+if __name__ == '__main__':
+    nm = input().split()
+    n = int(nm[0])
+    m = int(nm[1])
+    arr = []
+
+    for _ in range(n):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    k = int(input())
+    arr.sort(key = lambda x : x[k]) # sort is important after append
+    for i in arr:
+        print(*i)
     
 #############################################################################################################
 '''
@@ -163,6 +198,45 @@ for i in range(N):
         
 for i in d: #This is needed almost everytime
     print(i,end=" ")
+
+#############################################################################################################
+'''
+Python Functionals
+Validating Email Addresses With a Filter
+
+Sample Input 0
+3
+lara@hackerrank.com
+brian-23@hackerrank.com
+britts_54@hackerrank.com
+
+Sample Output 0
+['brian-23@hackerrank.com', 'britts_54@hackerrank.com', 'lara@hackerrank.com']
+
+'''
+def fun(s):
+    try:
+        user, www = s.split("@") #qqq@gmail.com
+        web, ext = www.split(".") #gmail com
+        if not user or not web or not ext:     # if user/web/ext is any kind of zero or empty container
+            return False
+        return not any([user != "".join(filter(lambda x: x.isalnum() or x in ["_", "-"], user)),
+            web != "".join(filter(lambda x: x.isalnum(), web)) , len(ext)>3])
+    except:
+        return False
+    
+def filter_mail(emails):
+    return list(filter(fun, emails))
+
+if __name__ == '__main__':
+    n = int(input())
+    emails = []
+    for _ in range(n):
+        emails.append(input())
+
+filtered_emails = filter_mail(emails)
+filtered_emails.sort()
+print(filtered_emails)
 
 #############################################################################################################
 '''
@@ -267,6 +341,24 @@ print(len(d));
 for k,v in d.items():
     print(v,end = " ");
 
+#############################################################################################################
+'''
+Built-Ins
+ginortS
+
+Sample Input 0
+Sorting1234
+
+Sample Output 0
+ginortS1324
+
+#
+All sorted lowercase letters are ahead of uppercase letters.
+All sorted uppercase letters are ahead of digits.
+All sorted odd digits are ahead of sorted even digits.
+'''
+print(*(sorted(input(), key=lambda x: (x.isdigit(), x.isdigit() and int(x)%2==0, x.isupper(), x.islower(), x))), sep='')
+# isdigit - last / islower - first
 #############################################################################################################
 '''
 Collection
@@ -569,6 +661,24 @@ Sample Output
 print(a**b+c**d)
 #############################################################################################################
 '''   
+Built-Ins
+input()
+Sample Input
+1 4
+x**3 + x**2 + x + 1
+
+Sample Output
+True  
+'''
+x, k = map(int, input().split()) # layout 1 as x is very important
+string = input().strip()
+
+if eval(string) == k: #eval allows to solve the math which it has already saved
+    print(True)
+else:
+    print(False)
+#############################################################################################################
+'''   
 Itertools
 Integers Come In All Sizes
 
@@ -747,6 +857,35 @@ for i in range(x):
         print("Error Code:",v);
 #############################################################################################################
 '''
+Python Functionals
+Reduce Function
+
+Sample Input
+3
+1 2
+3 4
+10 6
+
+Sample Output
+5 8
+
+(1/2)*(3/4)*(10/6) = (5/8))
+'''
+from fractions import Fraction
+from functools import reduce
+
+def product(fracs):
+    t = Fraction(reduce(lambda x, y: x * y, fracs)) #fracs is already defined in __name__
+    return t.numerator, t.denominator
+
+if __name__ == '__main__':
+    fracs = []
+    for _ in range(int(input())):
+        fracs.append(Fraction(*map(int, input().split())))
+    result = product(fracs)
+    print(*result)
+#############################################################################################################
+'''
 Errors and Exception
 Incorrect Regex
 
@@ -770,6 +909,81 @@ for _ in range(N):
         Output = False
     
     print(Output)
+#############################################################################################################
+'''
+Built-Ins
+Zipped!
+
+>>> A = [1,2,3]
+>>> B = [6,5,4]
+>>> C = [7,8,9]
+>>> X = [A] + [B] + [C]
+>>> print zip(*X)
+[(1, 6, 7), (2, 5, 8), (3, 4, 9)]
+
+Sample Input
+5 3
+89 90 78 93 80
+90 91 85 88 86  
+91 92 83 89 90.5
+
+Sample Output
+90.0 
+91.0 
+82.0 
+90.0 
+85.5  
+
+Explain
+Marks obtained by student 1: (80 + 90 + 91) /3
+'''
+n, m = map(int,input().split())
+score = list() # [] also fine
+
+for i in range(m):
+    items = map(float, input().split())
+    score.append(items)
+
+# print(zip(*score)) will not show anything. it has to be in loop
+ 
+for i in zip(*score):  # *score removes the list in zip function
+    print(sum(i)/len(i)) 
+#############################################################################################################
+'''
+Built-Ins
+Any or All
+
+######## palindromic integer ########
+
+Sample Input
+5
+12 9 61 5 14 
+
+Sample Output
+True
+'''
+def isPositive(i):
+    if i > 0:
+        return True
+    return False
+
+def isPalindrome(i):
+    if int(str(i)[::-1]) is i:
+        return True
+    return False
+
+N = int(input())
+storage = list(map(int, input().split()))
+storage = sorted(storage)
+
+if all([isPositive(i) for i in storage]):
+    if any([isPalindrome(i) for i in storage]):
+        print("True")
+    else:
+        print("False")
+else:
+    print("False")
+#############################################################################################################
 
 #############################################################################################################
 ############################################### VERY HARD ###################################################
