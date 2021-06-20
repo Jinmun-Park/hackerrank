@@ -128,6 +128,44 @@ if __name__ == '__main__':
 
 #############################################################################################################
 '''
+Collection
+Collections.deque()
+
+Sample Input 0
+6
+append 1
+append 2
+append 3
+appendleft 4
+pop
+popleft
+
+Sample Output 0
+1 2
+
+'''
+from collections import deque
+
+N = int(input())
+d = deque()
+
+for i in range(N):
+    input_list = list(input().split()) ### This has to be extremely carefull
+    
+    if input_list[0]=='append':
+        d.append(int(input_list[1]))
+    elif input_list[0]=='appendleft':
+        d.appendleft(int(input_list[1]))
+    elif input_list[0]=='popleft':
+        d.popleft()
+    elif input_list[0]=='pop':
+        d.pop()
+        
+for i in d: #This is needed almost everytime
+    print(i,end=" ")
+
+#############################################################################################################
+'''
 String
 Merge the Tools!
 
@@ -147,12 +185,17 @@ from collections import OrderedDict
 def merge_the_tools(string, k):
     for i in range(0, len(string), k): #0,3,6
         print(''.join(OrderedDict.fromkeys(string[i:i + k])))
+        
+if __name__ == '__main__':
+    string, k = raw_input(), int(raw_input())
+    merge_the_tools(string, k)
 #############################################################################################################   
 '''
 Collections
 Collections.OrderedDict()
 
 Sample Input 0
+
 9
 BANANA FRIES 12
 POTATO CHIPS 30
@@ -165,6 +208,7 @@ CANDY 5
 POTATO CHIPS 30
 
 Sample Output 0
+
 BANANA FRIES 12
 POTATO CHIPS 60
 APPLE JUICE 20
@@ -177,14 +221,123 @@ d = OrderedDict();
 for i in range(N):
     item = input().split()
     itemPrice = int(item[-1]) # last array [12, 30, 10,,,]
-    itemName = " ".join(item[:-1]) # Everything excel last array
-    if(d.get(itemName)): # Filter the same, filter out
+    itemName = " ".join(item[:-1]) # Everything excep last array
+    if(d.get(itemName)): # Filter the same, filter out / # itemName in d
         d[itemName] += itemPrice
     else:
         d[itemName] = itemPrice
         
 for i in d.keys():
     print(i, d[i])
+#############################################################################################################
+'''
+Collections
+Word Order
+
+Sample Input 0
+
+4
+bcdef
+abcdefg
+bcde
+bcdef
+
+Sample Output 0
+
+3
+2 1 1
+
+There are  distinct words. Here, "bcdef" appears twice in the input at the first and last positions. 
+The other words appear once each. The order of the first appearances are "bcdef", "abcdefg" and "bcde" which corresponds to the output.
+'''
+import collections;
+
+N = int(input())
+d = collections.OrderedDict() ###### This is important
+
+for i in range(N):
+    word = input()
+    if word in d:
+        d[word] +=1
+    else:
+        d[word] = 1
+
+print(len(d));
+
+for k,v in d.items():
+    print(v,end = " ");
+
+#############################################################################################################
+'''
+Collection
+collections.Counter()
+
+Sample Input
+10
+2 3 4 5 6 8 7 6 5 18
+6 
+6 55
+6 45
+6 55
+4 40
+18 60
+10 50
+
+Sample Output
+200
+
+Customer 1: Purchased size 6 shoe for $55.
+Customer 2: Purchased size 6 shoe for $45.
+Customer 3: Size 6 no longer available, so no purchase.
+Customer 4: Purchased size 4 shoe for $40.
+Customer 5: Purchased size 18 shoe for $60.
+Customer 6: Size 10 not available, so no purchase.
+'''
+
+from collections import Counter
+X = int(input())
+key = Counter(map(int,input().split()))
+N = int(input())
+
+earnings = 0
+for customer in range(N): #{5: 2, 6: 2, 2: 1, 3: 1, 4: 1, 8: 1, 7: 1, 18: 1}
+    size, x_i = map(int,input().split()) # bring the list (6,55) -> size=6, x_i=55
+    if size in key and key[size] > 0: 
+        key[size] -= 1 # size limitation with the count 
+        earnings += x_i
+            
+print(earnings)
+
+#############################################################################################################
+'''
+Collection
+Company Logo
+
+Sample Input
+aabbbccde
+
+Sample Output
+b 3
+a 2
+c 2
+'''
+# Default
+import math
+import os
+import random
+import re
+import sys
+
+# Library
+import collections
+
+if __name__ == '__main__':
+    s = sorted(input().strip())
+    s_counter = collections.Counter(s).most_common()
+    s_counter = sorted(s_counter, key=lambda x: (x[1] * -1, x[0]))
+    #Sort in descending order of occurrence count/ characters in alphabetical order.
+    for i in range(0, 3):
+        print(s_counter[i][0], s_counter[i][1])
 #############################################################################################################
 '''
 Sets
@@ -355,7 +508,7 @@ print(sum(set1))
 #############################################################################################################
 '''   
 Sets
-Set Mutations16
+The Captain's Room
 
 Sample Input
 5
@@ -521,40 +674,7 @@ io = input()
 for i,j in groupby(map(int,list(io))):
     print(tuple([len(list(j)), i]) ,end = " ") # This is tuple
 #############################################################################################################
-'''
-Collection
-collections.Counter()
 
-Sample Input
-10
-2 3 4 5 6 8 7 6 5 18
-6
-6 55
-6 45
-6 55
-4 40
-18 60
-10 50
-
-Sample Output
-200
-'''
-
-from collections import Counter
-X = int(input())
-key = Counter(map(int,input().split()))
-N = int(input())
-
-earnings = 0
-for customer in range(N): #{5: 2, 6: 2, 2: 1, 3: 1, 4: 1, 8: 1, 7: 1, 18: 1}
-    size, x_i = map(int,input().split()) # bring the list (6,55) -> size=6, x_i=55
-    if size in key and key[size] > 0: 
-        key[size] -= 1 # size limitation with the count 
-        earnings += x_i
-            
-print(earnings)
-
-#############################################################################################################
 '''
 Collection
 collections.namedtuple()
@@ -584,5 +704,164 @@ for _ in range(n):
     student = students(MARKS, CLASS, NAME, ID)
     total_marks += int(student.MARKS)
 print('{:.2f}'.format(total_marks / n))
+#############################################################################################################
+'''
+Date and Time
+Calendar Module
+
+Sample Input
+08 05 2015
+
+Sample Output
+WEDNESDAY
+'''
+import calendar
+
+m, d, y = map(int, input().strip().split())
+
+print(calendar.day_name[calendar.weekday(y, m, d)].upper())
+#############################################################################################################
+'''
+Errors and Exception
+Exceptions
+
+Sample Input
+3
+1 0
+2 $
+3 1
+
+Sample Output
+Error Code: integer division or modulo by zero
+Error Code: invalid literal for int() with base 10: '$'
+3
+'''
+x = int(input());
+for i in range(x):
+    try:
+        a, b = input().split()
+        print(int(a)//int(b))
+    except ZeroDivisionError as e:
+        print("Error Code:",e);
+    except ValueError as v:
+        print("Error Code:",v);
+#############################################################################################################
+'''
+Errors and Exception
+Incorrect Regex
+
+Sample Input
+2
+.*\+
+.*+
+
+Sample Output
+True
+False
+'''
+import re;
+
+N = int(input())
+for _ in range(N):
+    try:
+        re.compile(input())
+        Output = True
+    except re.error:
+        Output = False
+    
+    print(Output)
 
 #############################################################################################################
+############################################### VERY HARD ###################################################
+#############################################################################################################
+
+'''
+Collection 
+Pilling Up!
+
+Sample Input
+STDIN        Function
+-----        --------
+2            T = 2
+6            blocks[] size n = 6
+4 3 2 1 3 4  blocks = [4, 3, 2, 1, 3, 4]
+3            blocks[] size n = 3
+1 3 2        blocks = [1, 3, 2]
+
+Sample Output
+
+Yes
+No
+'''
+from collections import deque
+
+N = int(input())
+
+for _ in range(N):
+    flag = True
+    input()   # This allows to select 'd' to blocks inputs deque[4,3,2,1,3,4], deque[1,3,2]
+    d = deque(map(int, input().strip().split()))
+    if(d[0] >= d[-1]): #[4,4] [1,2] 
+        max = d.popleft() #[4] 
+    else:
+        max = d.pop() #[]
+    while d:
+        if(len(d)==1):
+            if(d[0] <= max):
+                break
+            else:
+                flag = False
+                break
+        else:
+            if(d[0]<=max and d[-1]<=max): #[4]>=[4], [4]<=[4]
+                if(d[0]>=d[-1]):
+                    max = d.popleft()
+                else:
+                    max = d.pop()
+            elif(d[0]<=max):
+                max = d.popleft()
+            elif(d[-1]<=max):
+                max = d.pop()
+            else:
+                flag = False
+                break
+    if flag:
+        print("Yes")
+    else:
+        print("No")
+        
+#############################################################################################################
+############################################### VERY HARD ###################################################
+#############################################################################################################
+
+'''
+Collection 
+DefaultDict Tutorial
+
+Sample Input
+STDIN   Function
+-----   --------
+5 2     group A size n = 5, group B size m = 2
+a       group A contains 'a', 'a', 'b', 'a', 'b'
+a
+b
+a
+b
+a       group B contains 'a', 'b'
+b
+
+Sample Output
+
+1 2 4
+3 5
+'''
+from collections import defaultdict
+
+d = defaultdict(list)
+n, m = map(int, input().split()) #5, 2
+
+for i in range(n):
+    d[input()].append(str(i + 1))
+   
+for j in range(m):
+    print(' '.join(d[input()]) or -1)
