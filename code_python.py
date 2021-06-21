@@ -20,7 +20,7 @@ if __name__ == '__main__':
         print(i+1,end="")
 
 #############################################################################################################
-        
+# Sort using Set
 '''
 Basic Data Type (Easy ~ Medium)
 Find the Runner-Up Score!
@@ -44,6 +44,7 @@ if __name__ == '__main__':
     print(arr[ar-2])
     
 #############################################################################################################
+# Sort using sort(set)
 '''
 Basic Data Type (Easy ~ Medium)
 Nested Lists
@@ -72,15 +73,15 @@ so we order their names alphabetically and print each name on a new line.
 if __name__ == '__main__':
     score_list = []
     for _ in range(int(raw_input())):
-        name = raw_input()
-        score = float(raw_input())
+        name = raw_input() #given default, [Harry], [Berry]
+        score = float(raw_input()) #37.21,,,
         score_list.append([name, score])    
         
     second_highest = sorted(set([score for name, score in score_list]))[1]
     print('\n'.join(sorted([name for name, score in score_list if score == second_highest])))
     
 #############################################################################################################
-
+# Sort using list
 '''
 Built-Ins
 Athlete Sort
@@ -110,12 +111,31 @@ if __name__ == '__main__':
     for _ in range(n):
         arr.append(list(map(int, input().rstrip().split())))
 
-    k = int(input())
+    k = int(input()) #k=1
     arr.sort(key = lambda x : x[k]) # sort is important after append
     for i in arr:
-        print(*i)
-    
+        print(*i)   
 #############################################################################################################
+# sort in condition
+'''
+Built-Ins
+ginortS
+
+Sample Input 0
+Sorting1234
+
+Sample Output 0
+ginortS1324
+
+#
+All sorted lowercase letters are ahead of uppercase letters.
+All sorted uppercase letters are ahead of digits.
+All sorted odd digits are ahead of sorted even digits.
+'''
+print(*(sorted(input(), key=lambda x: (x.isdigit(), x.isdigit() and int(x)%2==0, x.isupper(), x.islower(), x))), sep='')
+# isdigit - last / islower - first
+#############################################################################################################
+# if else (list)
 '''
 Basic Data Type
 List
@@ -162,6 +182,7 @@ if __name__ == '__main__':
             the_list.reverse()
 
 #############################################################################################################
+# if else (deque)
 '''
 Collection
 Collections.deque()
@@ -200,6 +221,7 @@ for i in d: #This is needed almost everytime
     print(i,end=" ")
 
 #############################################################################################################
+# if not (text)
 '''
 Python Functionals
 Validating Email Addresses With a Filter
@@ -239,6 +261,7 @@ filtered_emails.sort()
 print(filtered_emails)
 
 #############################################################################################################
+# orderdictionary (fromkeys)
 '''
 String
 Merge the Tools!
@@ -254,7 +277,7 @@ AB
 CA
 AD
 '''
-from collections import OrderedDict
+from collections import OrderedDict # Orderdictionary shows unique
 
 def merge_the_tools(string, k):
     for i in range(0, len(string), k): #0,3,6
@@ -264,6 +287,7 @@ if __name__ == '__main__':
     string, k = raw_input(), int(raw_input())
     merge_the_tools(string, k)
 #############################################################################################################   
+# orderdictionry (sum)
 '''
 Collections
 Collections.OrderedDict()
@@ -295,7 +319,7 @@ d = OrderedDict();
 for i in range(N):
     item = input().split()
     itemPrice = int(item[-1]) # last array [12, 30, 10,,,]
-    itemName = " ".join(item[:-1]) # Everything excep last array
+    itemName = " ".join(item[:-1]) # Everything excep last array / [BANANA]
     if(d.get(itemName)): # Filter the same, filter out / # itemName in d
         d[itemName] += itemPrice
     else:
@@ -304,6 +328,7 @@ for i in range(N):
 for i in d.keys():
     print(i, d[i])
 #############################################################################################################
+# orderdictionary (wordorder)
 '''
 Collections
 Word Order
@@ -331,7 +356,7 @@ d = collections.OrderedDict() ###### This is important
 
 for i in range(N):
     word = input()
-    if word in d:
+    if word in d: #if(d.get(word)) should be same
         d[word] +=1
     else:
         d[word] = 1
@@ -342,24 +367,7 @@ for k,v in d.items():
     print(v,end = " ");
 
 #############################################################################################################
-'''
-Built-Ins
-ginortS
-
-Sample Input 0
-Sorting1234
-
-Sample Output 0
-ginortS1324
-
-#
-All sorted lowercase letters are ahead of uppercase letters.
-All sorted uppercase letters are ahead of digits.
-All sorted odd digits are ahead of sorted even digits.
-'''
-print(*(sorted(input(), key=lambda x: (x.isdigit(), x.isdigit() and int(x)%2==0, x.isupper(), x.islower(), x))), sep='')
-# isdigit - last / islower - first
-#############################################################################################################
+# Counter (in condition, count=0)
 '''
 Collection
 collections.Counter()
@@ -388,19 +396,20 @@ Customer 6: Size 10 not available, so no purchase.
 
 from collections import Counter
 X = int(input())
-key = Counter(map(int,input().split()))
+key = Counter(map(int,input().split())) #{5: 2, 6: 2, 2: 1, 3: 1, 4: 1, 8: 1, 7: 1, 18: 1}
 N = int(input())
 
 earnings = 0
-for customer in range(N): #{5: 2, 6: 2, 2: 1, 3: 1, 4: 1, 8: 1, 7: 1, 18: 1}
+for customer in range(N): 
     size, x_i = map(int,input().split()) # bring the list (6,55) -> size=6, x_i=55
-    if size in key and key[size] > 0: 
+    if size in key and key[size] > 0: #key[size], {5:2,,,,} then choose 2 and we are sequently deleting it in key[size]=-1
         key[size] -= 1 # size limitation with the count 
         earnings += x_i
             
 print(earnings)
 
 #############################################################################################################
+# Counter (sorted, in condition)
 '''
 Collection
 Company Logo
@@ -431,6 +440,7 @@ if __name__ == '__main__':
     for i in range(0, 3):
         print(s_counter[i][0], s_counter[i][1])
 #############################################################################################################
+# Set(Union)
 '''
 Sets
 Symmetric Difference
@@ -459,41 +469,45 @@ for i in sorted(list(set3)):
         print i
         
 #############################################################################################################
-
+# Set (count = 0)
 '''
 Sets
 No idea
 
 Sample Input
+3 2
 1 5 3
 3 1
 5 7
 
 Sample Output
 1
+
+Explanation
+Happiness (3-1) - (5-no array) = 1
 '''
-space = set(map(int,raw_input().split()))
-n = map(int,raw_input().split()) 
-# Excluding Set is important, making list later in loop deducts your mark
-A = set(map(int,raw_input().split()))
-B = set(map(int,raw_input().split()))
-#union = A.union(B)
-#happiness = A.intersection(n)
-#sadness = B.intersection(n)
-#total = len(happiness)-len(sadness)
-#print(total)
+io = input().split()
+m = int(io[0]) #3
+n = int(io[1]) #2
 
-counter = 0
-for i in n:
+storage = list()
+count = 0 # count 0~
+
+storage = list(map(int, input().strip().split())) #1,5,3
+
+A = set(map(int, input().strip().split())) #3,1
+B = set(map(int, input().strip().split())) #5,7
+
+for i in storage: # 1,5,3
     if i in A:
-        counter += 1
-    elif i in B:
-        counter -= 1
+        count = count+1
+    if i in B:
+        count = count-1
 
-print counter
+print(count)
 
 #############################################################################################################
-
+# Set (add)
 '''
 Sets
 sets.add
@@ -521,6 +535,7 @@ for i in range(N):
 print(len(countries))
 
 #############################################################################################################
+# set (discard, remove, pop)
 '''
 Sets
 Set .discard(), .remove() & .pop()
@@ -557,6 +572,7 @@ for i in range(num):
         s.pop()
 print(sum(list(s)))
 #############################################################################################################   
+# set (mutation)
  '''   
 Sets
 Set Mutations16
@@ -598,6 +614,7 @@ for i in range(n2):
     
 print(sum(set1))        
 #############################################################################################################
+# Set (complex sort)
 '''   
 Sets
 The Captain's Room
@@ -621,7 +638,8 @@ for i in range(len(storage)):
             break;
     else:
         print(storage[i])
-#############################################################################################################
+############################################################################################################# IMPORTANT (input method)
+# Set (if not)
 '''   
 Sets
 Check Strict Superset
@@ -646,6 +664,7 @@ for i in range(N):
 
 print(output)
 #############################################################################################################
+# math
 '''   
 Math
 Integers Come In All Sizes
@@ -660,6 +679,7 @@ Sample Output
 '''
 print(a**b+c**d)
 #############################################################################################################
+# math (eval)
 '''   
 Built-Ins
 input()
@@ -678,6 +698,7 @@ if eval(string) == k: #eval allows to solve the math which it has already saved
 else:
     print(False)
 #############################################################################################################
+# math (list)
 '''   
 Itertools
 Integers Come In All Sizes
@@ -766,7 +787,7 @@ lis = input().split(' ')
 for i in combinations_with_replacement(sorted(lis[0]), int(lis[1])):
     print(''.join(i))
 #############################################################################################################
-
+# tuple (sort)
 '''   
 Itertools
 Integers Come In All Sizes
@@ -784,7 +805,7 @@ io = input()
 for i,j in groupby(map(int,list(io))):
     print(tuple([len(list(j)), i]) ,end = " ") # This is tuple
 #############################################################################################################
-
+# tuple (sort, count = 0)
 '''
 Collection
 collections.namedtuple()
@@ -810,7 +831,7 @@ total_marks = 0
 
 for _ in range(n):
     students = namedtuple('student', fields)
-    MARKS, CLASS, NAME, ID = input().split() #bring the list
+    MARKS, CLASS, NAME, ID = input().split() #bring the list (all the list has already saved under the column, so we can bring the column name)
     student = students(MARKS, CLASS, NAME, ID)
     total_marks += int(student.MARKS)
 print('{:.2f}'.format(total_marks / n))
@@ -855,7 +876,7 @@ for i in range(x):
         print("Error Code:",e);
     except ValueError as v:
         print("Error Code:",v);
-#############################################################################################################
+############################################################################################################# IMPORTANT
 '''
 Python Functionals
 Reduce Function
@@ -881,35 +902,12 @@ def product(fracs):
 if __name__ == '__main__':
     fracs = []
     for _ in range(int(input())):
-        fracs.append(Fraction(*map(int, input().split())))
+        fracs.append(Fraction(*map(int, input().split()))) ## This is important, this makes (1/2) and (3/5) 
     result = product(fracs)
     print(*result)
-#############################################################################################################
-'''
-Errors and Exception
-Incorrect Regex
-
-Sample Input
-2
-.*\+
-.*+
-
-Sample Output
-True
-False
-'''
-import re;
-
-N = int(input())
-for _ in range(N):
-    try:
-        re.compile(input())
-        Output = True
-    except re.error:
-        Output = False
     
-    print(Output)
-#############################################################################################################
+############################################################################################################# 
+
 '''
 Built-Ins
 Zipped!
