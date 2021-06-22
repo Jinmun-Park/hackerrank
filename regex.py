@@ -211,6 +211,40 @@ filtered_emails.sort()
 print(filtered_emails)
 
 #############################################################################################################
+# decoration (but not using re)
+'''
+Closures and Decorators
+Standardize Mobile Number Using Decorators
+
+Sample Input 0
+3
+07895462130
+919875641230
+9195969878
+
+Sample Output 0
++91 78954 62130
++91 91959 69878
++91 98756 41230
+
+Explanation
+The given mobile numbers may have +91, 91 or 0 written before the actual 10 digit number. Alternatively, there may not be any prefix at all.
+'''
+def wrapper(f):
+    def fun(l):
+        f(['+91 ' + c[-10:-5] + ' ' + c[-5:] for c in l])
+        # Standardize Mobile Number Using Decorators in python - Hacker Rank Solution END
+    return fun
+
+@wrapper
+def sort_phone(l):
+    print(*sorted(l), sep='\n')
+
+if __name__ == '__main__':
+    l = [input() for _ in range(int(input()))]
+    sort_phone(l) 
+
+#############################################################################################################
 # re (sub)
 # re.sub() tool evaluates a pattern and, for each valid match, it calls a method (or lambda)
 # \d = Returns a match where the string contains digits
