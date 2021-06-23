@@ -135,6 +135,75 @@ All sorted odd digits are ahead of sorted even digits.
 print(*(sorted(input(), key=lambda x: (x.isdigit(), x.isdigit() and int(x)%2==0, x.isupper(), x.islower(), x))), sep='')
 # isdigit - last / islower - first
 #############################################################################################################
+# decoration (but not using re / sorted)
+'''
+Closures and Decorators
+Standardize Mobile Number Using Decorators
+
+Sample Input 0
+3
+07895462130
+919875641230
+9195969878
+
+Sample Output 0
++91 78954 62130
++91 91959 69878
++91 98756 41230
+
+Explanation
+The given mobile numbers may have +91, 91 or 0 written before the actual 10 digit number. Alternatively, there may not be any prefix at all.
+'''
+def wrapper(f):
+    def fun(l):
+        f(['+91 ' + c[-10:-5] + ' ' + c[-5:] for c in l])
+    return fun
+
+@wrapper
+def sort_phone(l):
+    print(*sorted(l), sep='\n')
+
+if __name__ == '__main__':
+    l = [input() for _ in range(int(input()))]
+    sort_phone(l) 
+
+#############################################################################################################
+# decoration (but not using re / sorted)
+'''
+Closures and Decorators
+Decorators 2 - Name Directory
+
+Sample Input 0
+3
+Mike Thomson 20 M
+Robert Bustle 32 M
+Andria Bustle 30 F
+
+Sample Output 0
+Mr. Mike Thomson
+Ms. Andria Bustle
+Mr. Robert Bustle
+
+Explanation
+Print their names in a specific format sorted by their age in ascending order '''
+
+import operator
+
+def person_lister(f):
+    def inner(people):
+        # complete the function
+        return map(f, sorted(people, key=lambda x: int(x[2])))
+    return inner
+
+@person_lister
+def name_format(person):
+    return ("Mr. " if person[3] == "M" else "Ms. ") + person[0] + " " + person[1]
+
+if __name__ == '__main__':
+    people = [input().split() for i in range(int(input()))]
+    print(*name_format(people), sep='\n')
+
+#############################################################################################################
 # if else (list)
 '''
 Basic Data Type
@@ -440,6 +509,89 @@ if __name__ == '__main__':
     for i in range(0, 3):
         print(s_counter[i][0], s_counter[i][1])
 #############################################################################################################
+# Count (count = 0)
+'''
+Debugging
+Words Score
+
+Sample Input
+3
+programming is awesome
+
+Sample Output
+4
+
+The score of programming is 1 since it contains 3 vowels, an odd number of vowels
+Total 1 + 1 + 2(awesome has 4vowels,even number = 2)
+'''
+def is_vowel(letter):
+    return letter in ['a', 'e', 'i', 'o', 'u', 'y']
+
+def score_words(words):
+    score = 0
+    for word in words:
+        num_vowels = 0
+        for letter in word:
+            if is_vowel(letter): #counting a number of vowels
+                num_vowels += 1
+        if num_vowels % 2 == 0: #if the reaminder is 0, its even
+            score += 2
+        else: #
+            score += 1
+    return score
+
+n = int(input())
+words = input().split()
+print(score_words(words))
+        
+#############################################################################################################
+# Set (count = 0)
+'''
+Sets
+No idea
+
+Sample Input
+3
+odd 2
+even 3
+odd 5
+
+Sample Output
+1
+3
+0
+2
+4
+1
+3
+5
+7
+9
+
+Explanation
+Happiness (3-1) - (5-no array) = 1
+'''
+io = input().split()
+m = int(io[0]) #3
+n = int(io[1]) #2
+
+storage = list()
+count = 0 # count 0~
+
+storage = list(map(int, input().strip().split())) #1,5,3
+
+A = set(map(int, input().strip().split())) #3,1
+B = set(map(int, input().strip().split())) #5,7
+
+for i in storage: # 1,5,3
+    if i in A:
+        count = count+1
+    if i in B:
+        count = count-1
+
+print(count)
+
+#############################################################################################################
 # Set(Union)
 '''
 Sets
@@ -468,44 +620,6 @@ set3 = (set1.difference(set2)).union(set2.difference(set1))
 for i in sorted(list(set3)):
         print i
         
-#############################################################################################################
-# Set (count = 0)
-'''
-Sets
-No idea
-
-Sample Input
-3 2
-1 5 3
-3 1
-5 7
-
-Sample Output
-1
-
-Explanation
-Happiness (3-1) - (5-no array) = 1
-'''
-io = input().split()
-m = int(io[0]) #3
-n = int(io[1]) #2
-
-storage = list()
-count = 0 # count 0~
-
-storage = list(map(int, input().strip().split())) #1,5,3
-
-A = set(map(int, input().strip().split())) #3,1
-B = set(map(int, input().strip().split())) #5,7
-
-for i in storage: # 1,5,3
-    if i in A:
-        count = count+1
-    if i in B:
-        count = count-1
-
-print(count)
-
 #############################################################################################################
 # Set (add)
 '''
@@ -981,6 +1095,34 @@ if all([isPositive(i) for i in storage]):
         print("False")
 else:
     print("False")
+#############################################################################################################
+'''
+Introduction
+Write a function
+
+Sample Input
+1990
+ 
+Sample Output
+False
+
+Explanation
+The year can be evenly divided by 4, is a leap year, unless:
+The year can be evenly divided by 100, it is NOT a leap year, unless:
+The year is also evenly divisible by 400. Then it is a leap year.
+'''
+def is_leap(year):
+    leap = False
+
+    if year%400==0 :
+        leap = True;
+    elif year%4 == 0 and year%100 != 0:
+        leap = True;
+    return leap
+    
+    
+year = int(input())
+print(is_leap(year))
 #############################################################################################################
 
 #############################################################################################################
