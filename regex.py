@@ -188,17 +188,25 @@ Sample Output 0
 '''
 def fun(s):
     try:
-        user, www = s.split("@") #qqq@gmail.com
-        web, ext = www.split(".") #gmail com
-        if not user or not web or not ext:     # if user/web/ext is any kind of zero or empty container
-            return False
-        return not any([user != "".join(filter(lambda x: x.isalnum() or x in ["_", "-"], user)),
-            web != "".join(filter(lambda x: x.isalnum(), web)) , len(ext)>3])
-    except:
+        username, url = s.split('@')
+        website,extension = url.split('.')
+    except ValueError:
         return False
     
+    if username.replace('-','').replace('_','').isalnum() is False: # if true then true
+        return False
+    
+    elif website.isalnum() is False:
+        return False
+    
+    elif len(extension) > 3:
+        return False
+    
+    else :
+        return True
+    
 def filter_mail(emails):
-    return list(filter(fun, emails))
+    return list(filter(fun, emails)) # filter shows only true value
 
 if __name__ == '__main__':
     n = int(input())
@@ -209,7 +217,6 @@ if __name__ == '__main__':
 filtered_emails = filter_mail(emails)
 filtered_emails.sort()
 print(filtered_emails)
-
 #############################################################################################################
 # decoration (but not using re / sorted)
 '''
