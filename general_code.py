@@ -291,6 +291,8 @@ for i in d: #This is needed almost everytime
 
 #############################################################################################################
 # if not (text)
+# isalnum() method returns True if all the characters are alphanumeric, meaning alphabet letter (a-z) and numbers (0-9).
+# filter : shows true only in filter()
 '''
 Python Functionals
 Validating Email Addresses With a Filter
@@ -304,20 +306,30 @@ britts_54@hackerrank.com
 Sample Output 0
 ['brian-23@hackerrank.com', 'britts_54@hackerrank.com', 'lara@hackerrank.com']
 
+Explanation
+username can only contain letters, digits, dashes and underscores
 '''
 def fun(s):
     try:
-        user, www = s.split("@") #qqq@gmail.com
-        web, ext = www.split(".") #gmail com
-        if not user or not web or not ext:     # if user/web/ext is any kind of zero or empty container
-            return False
-        return not any([user != "".join(filter(lambda x: x.isalnum() or x in ["_", "-"], user)),
-            web != "".join(filter(lambda x: x.isalnum(), web)) , len(ext)>3])
-    except:
+        username, url = s.split('@')
+        website,extension = url.split('.')
+    except ValueError:
         return False
     
+    if username.replace('-','').replace('_','').isalnum() is False: # if true then true
+        return False
+    
+    elif website.isalnum() is False:
+        return False
+    
+    elif len(extension) > 3:
+        return False
+    
+    else :
+        return True
+    
 def filter_mail(emails):
-    return list(filter(fun, emails))
+    return list(filter(fun, emails)) # filter shows only true value
 
 if __name__ == '__main__':
     n = int(input())
@@ -348,7 +360,7 @@ AD
 '''
 from collections import OrderedDict # Orderdictionary shows unique
 
-def merge_the_tools(string, k):
+def merge_the_tools(string, k): # k=3
     for i in range(0, len(string), k): #0,3,6
         print(''.join(OrderedDict.fromkeys(string[i:i + k])))
         
@@ -525,17 +537,17 @@ The score of programming is 1 since it contains 3 vowels, an odd number of vowel
 Total 1 + 1 + 2(awesome has 4vowels,even number = 2)
 '''
 def is_vowel(letter):
-    return letter in ['a', 'e', 'i', 'o', 'u', 'y']
+    return letter in ['a', 'e', 'i', 'o', 'u', 'y'] #given
 
 def score_words(words):
     score = 0
-    for word in words:
+    for word in words: # programming/is/awesome
         num_vowels = 0
-        for letter in word:
+        for letter in word: # programming/is/awesome
             if is_vowel(letter): #counting a number of vowels
-                num_vowels += 1
+                num_vowels += 1 # count no_vowels
         if num_vowels % 2 == 0: #if the reaminder is 0, its even
-            score += 2
+            score += 2 #if its even +2 in iterator
         else: #
             score += 1
     return score
@@ -551,22 +563,13 @@ Sets
 No idea
 
 Sample Input
-3
-odd 2
-even 3
-odd 5
+3 2
+1 5 3
+3 1
+5 7
 
 Sample Output
 1
-3
-0
-2
-4
-1
-3
-5
-7
-9
 
 Explanation
 Happiness (3-1) - (5-no array) = 1
@@ -689,9 +692,10 @@ print(sum(list(s)))
 # set (mutation)
  '''   
 Sets
-Set Mutations16
+Set Mutations
 
 Sample Input
+16
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 24 52
 4
 intersection_update 10
@@ -745,8 +749,8 @@ N = int(input())
 storage = map(int, input().split())
 storage = sorted(storage)
 
-for i in range(len(storage)):
-    if(i != len(storage)-1):
+for i in range(len(storage)): #sorted range
+    if(i != len(storage)-1): #len(storage)=10 / 10-1 = 9 / i != 9 .../ This is to loop till second last number
         if(storage[i]!=storage[i-1] and storage[i]!=storage[i+1]):
             print(storage[i])
             break;
