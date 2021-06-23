@@ -211,7 +211,7 @@ filtered_emails.sort()
 print(filtered_emails)
 
 #############################################################################################################
-# decoration (but not using re)
+# decoration (but not using re / sorted)
 '''
 Closures and Decorators
 Standardize Mobile Number Using Decorators
@@ -233,7 +233,6 @@ The given mobile numbers may have +91, 91 or 0 written before the actual 10 digi
 def wrapper(f):
     def fun(l):
         f(['+91 ' + c[-10:-5] + ' ' + c[-5:] for c in l])
-        # Standardize Mobile Number Using Decorators in python - Hacker Rank Solution END
     return fun
 
 @wrapper
@@ -243,6 +242,42 @@ def sort_phone(l):
 if __name__ == '__main__':
     l = [input() for _ in range(int(input()))]
     sort_phone(l) 
+
+#############################################################################################################
+# decoration (but not using re / sorted)
+'''
+Closures and Decorators
+Decorators 2 - Name Directory
+
+Sample Input 0
+3
+Mike Thomson 20 M
+Robert Bustle 32 M
+Andria Bustle 30 F
+
+Sample Output 0
+Mr. Mike Thomson
+Ms. Andria Bustle
+Mr. Robert Bustle
+
+Explanation
+Print their names in a specific format sorted by their age in ascending order '''
+
+import operator
+
+def person_lister(f):
+    def inner(people):
+        # complete the function
+        return map(f, sorted(people, key=lambda x: int(x[2])))
+    return inner
+
+@person_lister
+def name_format(person):
+    return ("Mr. " if person[3] == "M" else "Ms. ") + person[0] + " " + person[1]
+
+if __name__ == '__main__':
+    people = [input().split() for i in range(int(input()))]
+    print(*name_format(people), sep='\n')
 
 #############################################################################################################
 # re (sub)
