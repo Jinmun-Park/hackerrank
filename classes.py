@@ -13,6 +13,15 @@ Sample Output
 0.26-0.11i
 2.24+0.00i
 7.81+0.00i
+
+Explanation
+For complex numbers with non-zero real (A) and complex part (B), the output should be in the following format:
+A + Bi
+Replace the plus symbol (+) with a minus symbol (-) when B < 0.
+For complex numbers with a zero complex part i.e. real numbers, the output should be:
+A + 0.00i
+For complex numbers where the real part is zero and the complex part is non-zero, the output should be:
+0.00 + Bi
 '''
 
 import math
@@ -51,16 +60,16 @@ class Complex(object):
 
     def __str__(self):
         if self.imaginary == 0:
-            result = "%.2f+0.00i" % (self.real)
+            result = "%.2f+0.00i" % (self.real) # Real number = 0 (A + 0.00i) (%.2f means 2 float digits)
         elif self.real == 0:
             if self.imaginary >= 0:
-                result = "0.00+%.2fi" % (self.imaginary)
+                result = "0.00+%.2fi" % (self.imaginary) # (A + Bi)
             else:
-                result = "0.00-%.2fi" % (abs(self.imaginary))
+                result = "0.00-%.2fi" % (abs(self.imaginary)) # where the real part is zero and the complex part is non-zero
         elif self.imaginary > 0:
             result = "%.2f+%.2fi" % (self.real, self.imaginary)
         else:
-            result = "%.2f-%.2fi" % (self.real, abs(self.imaginary))
+            result = "%.2f-%.2fi" % (self.real, abs(self.imaginary))  # when B < 0 (A + Bi) 
         return result #print(*) means more than 1
     
         
