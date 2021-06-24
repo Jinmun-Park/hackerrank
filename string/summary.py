@@ -159,3 +159,19 @@ if __name__ == '__main__':
     result = wrap(string, max_width)
     print(result)
 ########################################################################################################################
+'''
+007 : String Formatting
+  Score : Fail
+  Reason : Do not understand question
+  Topic : number formatting
+  Explain : -
+'''
+def print_formatted(number):
+    # your code goes here
+    width = len("{0:b}".format(number))
+    for i in range(1, number+1):
+        print("{i:{width}d} {i:{width}o} {i:{width}X} {i:{width}b}".format(i=i, width=width))
+
+        
+
+if __name__ == '__main__':
