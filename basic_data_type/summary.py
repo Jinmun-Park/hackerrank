@@ -2,6 +2,21 @@
 basci_data_types
 '''
 
+
+'''
+summary 
+001 : set() 
+  - Every set element is unique (no duplicates) and must be immutable (cannot be changed).
+  - It helps to put unique values in 'dictionary' format
+  - This helps to sort unique array
+002 : enumerate()
+  - Gives 'Count' and 'Value' in the 'list'
+  - [v for i, v in enumerate(iterable, start=1) if not i % 2]
+  - myList = [1, 2, 3, 100, 5]
+  - [i[0] for i in sorted(enumerate(myList), key=lambda x:x[1])]
+'''
+########################################################################################################################
+
 '''
 001 : Nested List
   Score : Failed 
@@ -39,9 +54,16 @@ if __name__ == '__main__':
 #[['Harry', 37.21], ['Berry', 37.21],,,]] : This is nested list
 second_highest = sorted(set([score for name, score in ls]))[1]  '''IMPORTANT'''
 #print(set([score for name, score in ls])) : {41.0, 37.2, 37.21, 39.0}
-
 print('\n'.join(sorted([name for name, score in ls if score == second_highest])))
 
+#Wrong
+def even_items(iterable):
+  return [v for i, v in enumerate(iterable, start=1) if not i % 2]
+
+myList = [1, 2, 3, 100, 5]
+[i[0] for i in sorted(enumerate(myList), key=lambda x:x[1])]
+
+########################################################################################################################
 
 '''
 002 : Find runner-up score
@@ -66,6 +88,8 @@ if __name__ == '__main__':
   runnerup_score = sorted(set(arr), reverse=True)[1]
   print(runnerup_score)
 #print(list(arr)) : [2, 3, 6, 6, 5]
+
+########################################################################################################################
 
 '''
 003 : Finding the percentage
@@ -105,3 +129,64 @@ if __name__ == '__main__':
         total = total+selection[i]
     # 2 digit float
     print("%.2f" % round(total/len(selection), 2))
+    
+########################################################################################################################
+
+'''
+004 : Lists
+  Score : Fail 
+  Reason : Tried using deque, and tried using nested list, and forgor using int() in every loop
+  Topic : list(), if elif
+  Explain : Apply if elif in the list
+'''
+#Input
+'''
+12
+insert 0 5
+insert 1 10
+insert 0 6
+print
+remove 6
+append 9
+append 1
+sort
+print
+pop
+reverse
+print
+'''
+#Output
+'''
+[6, 5, 10]
+[1, 5, 9, 10]
+[9, 5, 1]
+'''
+
+if __name__ == '__main__':
+    N = int(input())
+    #d= deque()
+    d = []
+    
+    #prompt = []
+    for _ in range(N):
+        prompt = input().split()
+        #prompt.append(action) : This will make nested list 
+        if prompt[0] == 'insert':
+            d.insert(int(prompt[1]), int(prompt[2]))
+        elif prompt[0] == 'remove':
+            d.remove(int(prompt[1]))
+        elif prompt[0] == 'append':
+            d.append(int(prompt[1]))
+        elif prompt[0] == 'sort':
+            d.sort()
+        elif prompt[0] == 'pop':
+            d.pop()
+        elif prompt[0] == 'reverse':
+            d.reverse()
+        elif prompt[0] == 'print':
+            print(d)
+            
+    #for i in d: #This is needed almost everytime
+    #    print(i,end=" ") 
+    
+########################################################################################################################
