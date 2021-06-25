@@ -243,6 +243,7 @@ def minion_game(string):
 ########################################################################################################################
 '''
 010: Merge the Tools!
+#### Look at 011: [Coming from Set]The Captain's Room
   Score : Failed
   Reason : Tried using Counter() instead of Set(). This happened because i did not know how to use sorted(key)
   Topic : sorted(set(), key =)
@@ -265,3 +266,58 @@ def merge_the_tools(string, k):
     for i in range(0,len(string),k):
         sort = sorted(set(string[i:i+k]), key = string[i:i+k].index)
         print(''.join(sort))
+########################################################################################################################
+'''
+011: [Coming from Set]The Captain's Room
+  Score : Success
+  Reason : 
+  Topic : Count()
+  Explain : Count unique characted
+'''
+#Input
+'''
+5
+1 2 3 6 5 4 4 2 5 3 6 1 6 5 3 2 4 1 2 5 1 4 3 6 8 4 3 1 5 6 2 
+'''
+#Output
+'''
+8
+'''
+from collections import Counter
+k = int(input())
+room = list(map(int, input().split()))
+
+cap_room = Counter(room)
+print(*[i for i,v in cap_room.items() if int(v) == 1]) # I do not know *[] only shows the result lol
+########################################################################################################################
+'''
+012: [Coming from itertools]Compress the String!
+  Score : Failed
+  Reason : Did not know how to use Groupby
+  Topic : from itertools import groupby 
+  Explain : groupby
+'''
+#Input
+'''
+1222311
+'''
+#Output
+'''
+(1, 1) (3, 2) (1, 3) (2, 1)
+'''
+from itertools import groupby
+
+sample = input() # 1222311
+empty_list = []
+
+for i,c in groupby(sample):
+    c_len = len(list(c))
+    show = (c_len, int(i))
+    empty_list.append(show)
+print(*empty_list)
+                  
+#print(i, *c) c is set up in the list by default
+#1 1
+#2 2 2 2
+#3 3
+#1 1 1
