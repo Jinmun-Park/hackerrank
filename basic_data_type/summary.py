@@ -1,12 +1,23 @@
 '''
 basci_data_types
 '''
+'''
+TIPS
+'''
+for count, value in enumerate(values, start=1):
+    print(count, value)
+#1 a
+#2 b
+#3 c
 
+my_set = set("HelloWorld")
+print(my_set)
+#{'H', 'l', 'r', 'W', 'o', 'd', 'e'}
 
 '''
 summary 
 001 : set() 
-  - Every set element is unique (no duplicates) and must be immutable (cannot be changed).
+  - Every set element is unique (no duplicates) and must be immutable (cannot be changed) and unordered.
   - It helps to put unique values in 'dictionary' format
   - This helps to sort unique array
 002 : enumerate()
