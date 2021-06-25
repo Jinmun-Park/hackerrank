@@ -1,15 +1,36 @@
 '''
 String
 '''
+'''
+Tips 
+'''
+# STATEMENT
+string = 'abcde'
+substring = 'a'
+substring_fail = ['a','e]
+
+# TIPS 01
+struig[0] : 'a'
+list(string) : ['a', 'b', 'c', 'd', 'e']
+string.split() : 'abcde' #By default, space split only
+# TIPS 02
+string.find(substring) : 0
+string.find(substring_fail) : error
+# TIPS 03
+substring in string : True
+substring_fail in string : True 
+# TIPS 04
+
+
 
 '''
 summary 
-001 : Replace Character at Specific Index in String
+001 : Replacing text at a specific position(Index) we want to put
   - Look at <004 : Mutations>
-  - Convert list before changing the text
+  - String has to be converted into 'list' before replacing the text(substring) into text
 
 002 : Count sub-string matches with string
-  - str.find(sub, start, end)
+  - str.find(sub, start, end) 
   - (start, end) is index position of substring
   - find() returns the index position in string, considering space.
   - find() returns -1, if substring does not match string.
@@ -21,8 +42,8 @@ summary
   - .islower()
   - .supper()
   
- 004 : Text Wrap 
-  - Sting position in every loop 
+ 004 : Text Wrap (Still not understand)
+  - String position in every loop 
   - Loop under df should be pythonic way.
   
 '''
@@ -96,7 +117,7 @@ if __name__ == '__main__':
 ########################################################################################################################
 '''
 005 : Find a string
-  Score : Success
+  Score : Success (Must Study Again)
   Reason : Google / Still not understanding
   Topic : - 
   Explain : -
@@ -152,7 +173,7 @@ YZ
 import textwrap
 
 def wrap(string, max_width):
-    return "\n".join(string[i:i+max_width]for i in range(0, len(string), max_width))    
+    return "\n".join(string[i:i+max_width] for i in range(0, len(string), max_width))    
 
 if __name__ == '__main__':
     string, max_width = input(), int(input())
@@ -171,7 +192,76 @@ def print_formatted(number):
     width = len("{0:b}".format(number))
     for i in range(1, number+1):
         print("{i:{width}d} {i:{width}o} {i:{width}X} {i:{width}b}".format(i=i, width=width))
+       
+########################################################################################################################
+'''
+008 : Capitalize!
+  Score : Half
+  Reason : return should contain all loop working in def(). Perfom split in loop.
+  Topic : Uppercase for the first word only
+  Explain : -
+'''
+def solve(s):
+    return ' '.join(w[0].upper() + w[1:] for w in s.split()) #hello world - Hello World / split should be performed in loop
+########################################################################################################################
+'''
+009 : The Minion Game
+  Score : Complete Fail
+  Reason : Could not understand logic, only able to build codes after reading discussion
+  Topic : Uppercase for the first word only
+  Explain : Find the position of word
+'''
+#Input
+'''
+BANANA
+'''
+#Output
+'''
+Stuart 12
+'''
+#Explanation
+'''
+https://www.hackerrank.com/challenges/the-minion-game/problem
+'''
 
-        
+def minion_game(string):
+    vowel =['A','E','I','O','U']
+    S=0
+    K=0
+    for i in range(len(string)):
+        if string[i] in vowel:
+            K+= len(string)-i
+        else:
+            S+=len(string)-i
+    if S>K:
+        print("Stuart"+" "+ "%d" % S)
+    elif K>S:
+        print("Kevin"+" "+'%d' % K)
+    else:
+        print("Draw")
+            
+########################################################################################################################
+'''
+010: Merge the Tools!
+  Score : Failed
+  Reason : Tried using Counter() instead of Set(). This happened because i did not know how to use sorted(key)
+  Topic : sorted(set(), key =)
+  Explain : Find the unique character and print
+'''
+#Input
+'''
+s = 'AABCAAADA'
+k = 3
+'''
+#Output
+'''
+AB
+CA
+AD
+'''
 
-if __name__ == '__main__':
+def merge_the_tools(string, k):
+    # your code goes here      
+    for i in range(0,len(string),k):
+        sort = sorted(set(string[i:i+k]), key = string[i:i+k].index)
+        print(''.join(sort))
