@@ -75,7 +75,7 @@ if __name__ == '__main__':
     score = float(input())
     ls.append([name,score])
 #[['Harry', 37.21], ['Berry', 37.21],,,]] : This is nested list
-second_highest = sorted(set([score for name, score in ls]))[1]  '''IMPORTANT'''
+second_highest = sorted(set(score for name, score in ls))[1]  '''IMPORTANT'''
 #print(set([score for name, score in ls])) : {41.0, 37.2, 37.21, 39.0}
 print('\n'.join(sorted([name for name, score in ls if score == second_highest])))
 
