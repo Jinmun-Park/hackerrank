@@ -26,12 +26,18 @@ for i in range(0,len(string),k):
 #AB
 #CA
 #AD
+
+#TIP 04 
+s = set(map(int, input().split())) 
+# With map {1,2,3} 
+# without map {'1','2','3'}
 '''
 summary 
 001 : set() 
   - Every set element is unique (no duplicates) and must be immutable (cannot be changed) and unordered.
   - It helps to put unique values in 'dictionary' format
   - This helps to sort unique array
+  
 002 : enumerate()
   - Gives 'Count' and 'Value' in the 'list'
   - [v for i, v in enumerate(iterable, start=1) if not i % 2]
@@ -212,4 +218,87 @@ if __name__ == '__main__':
     #for i in d: #This is needed almost everytime
     #    print(i,end=" ") 
     
+########################################################################################################################
+'''
+005 : [Coming from Set] Set .discard(), .remove() & .pop()
+
+'''
+#Input
+'''
+9
+1 2 3 4 5 6 7 8 9
+10
+pop
+remove 9
+discard 9
+discard 8
+remove 7
+pop 
+discard 6
+remove 5
+pop 
+discard 5
+'''
+#Output
+'''
+4
+'''
+n = int(input())
+s = set(map(int, input().split())) #1 2 3 4 5 6 7 8 9 
+''' Only difference from the question above is 's' '''
+N = int(input())
+for _ in range(N):
+    order = input().split()
+    if order[0] == 'pop':
+        s.pop()
+    elif order[0] == 'remove':
+        s.remove(int(order[1]))
+    elif order[0] == 'discard':
+        s.discard(int(order[1]))
+print(sum(s))
+
+########################################################################################################################
+
+########################################################################################################################
+'''
+006 : [Coming from Set] Set Mutations
+
+'''
+#Input
+'''
+9
+1 2 3 4 5 6 7 8 9
+10
+pop
+remove 9
+discard 9
+discard 8
+remove 7
+pop 
+discard 6
+remove 5
+pop 
+discard 5
+'''
+#Output
+'''
+38
+'''
+n = int(input())
+s = set(map(int, input().split())) '''IMPORTANT : This has to be mapped to create pure set(dictionary form) to work mutation'''
+N = int(input())
+for i in range(N):
+    prompt = input().split()
+    element = set(map(int,input().split())) ''' IMPORTANT : Input has to be a pure set form to match with 's' '''
+    #print(prompt, element)
+    if prompt[0] == 'intersection_update':
+        s.intersection_update(element)
+    elif prompt[0] == 'update':
+        s.update(element)
+    elif prompt[0] == 'symmetric_difference_update':
+        s.symmetric_difference_update(element)
+    elif prompt[0] == 'difference_update':
+        s.difference_update(element)
+print(sum(s))
+
 ########################################################################################################################
