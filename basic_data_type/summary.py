@@ -4,16 +4,28 @@ basci_data_types
 '''
 TIPS
 '''
+#TIP 01
 for count, value in enumerate(values, start=1):
     print(count, value)
 #1 a
 #2 b
 #3 c
 
+#TIP 02
 my_set = set("HelloWorld")
 print(my_set)
 #{'H', 'l', 'r', 'W', 'o', 'd', 'e'}
 
+#TIP 03 
+string = AABCAAADA
+k = 3
+
+for i in range(0,len(string),k):
+    sort = sorted(set(string[i:i+k]), key = string[i:i+k].index)
+    print(''.join(sort))
+#AB
+#CA
+#AD
 '''
 summary 
 001 : set() 
