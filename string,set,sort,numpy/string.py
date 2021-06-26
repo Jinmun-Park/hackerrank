@@ -433,4 +433,10 @@ print(*counts.values())
 019: [Coming from Python Functionals]Validating Email Addresses With a Filter
 #### MERGED TO 'creative.py' 
 '''
+########################################################################################################################
+'''
+020: [Coming from Debugging] Words Score
+#### MERGED TO 'creative.py' 
+'''
+########################################################################################################################
 
