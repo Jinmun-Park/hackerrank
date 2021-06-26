@@ -65,8 +65,8 @@ print(*[i for i,v in cap_room.items() if int(v) == 1]) # I do not know *[] only 
 003 : [Comming from Built-Ins] Any or All
   Score : Fail
   Reason : First time using
-  Topic : amy() / all()
-  Explain : -
+  Topic : any() / all()
+  Explain : any() and all() returns True or False
 '''
 #Input
 '''
@@ -79,3 +79,20 @@ True
 '''
 N,n = int(input()),input().split()
 print(all([int(i)>0 for i in n]) and any([j == j[::-1] for j in n]))
+########################################################################################################################
+'''
+004 : [Comming from Built-Ins] ginortS
+  Score : -
+  Reason : -
+  Topic : -
+  Explain : -
+'''
+#Input
+'''
+Sorting1234
+'''
+#Output
+'''
+ginortS1324
+'''
+print(*(sorted(input(), key=lambda x: (x.isdigit(), x.isdigit() and int(x)%2==0, x.isupper(), x.islower(), x))), sep='')
