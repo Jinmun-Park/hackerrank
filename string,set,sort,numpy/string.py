@@ -143,36 +143,8 @@ if __name__ == '__main__':
 ########################################################################################################################
 '''
 005 : Find a string
-  Score : Success (Must Study Again)
-  Reason : Google / Still not understanding
-  Topic : while True and string.find()
-  Explain : -
+#### MERGED TO 'creative.py' 
 '''
-#Input
-'''
-ABCDCDC
-CDC
-'''
-#Output
-'''
-2
-'''
-def count_substring(string, sub_string):   
-    count = 0
-    start = 0
-    while True:
-        start = string.find(sub_string, start+1)  #substring index will move (0) (1) (2)
-        if start > 0:
-            count+=1
-        else:
-            return count
-        
-if __name__ == '__main__':
-    string = input().strip()
-    sub_string = input().strip()
-    
-    count = count_substring(string, sub_string)
-    print(count)
 ########################################################################################################################
 '''
 006 : Text Wrap
@@ -232,40 +204,8 @@ def solve(s):
 ########################################################################################################################
 '''
 009 : The Minion Game
-  Score : Complete Fail
-  Reason : Could not understand logic, only able to build codes after reading discussion
-  Topic : for i in () : +=
-  Explain : Find the position of word / Uppercase for the first word only
+#### MERGED TO 'creative.py' 
 '''
-#Input
-'''
-BANANA
-'''
-#Output
-'''
-Stuart 12
-'''
-#Explanation
-'''
-https://www.hackerrank.com/challenges/the-minion-game/problem
-'''
-
-def minion_game(string):
-    vowel =['A','E','I','O','U']
-    S=0
-    K=0
-    for i in range(len(string)):
-        if string[i] in vowel:
-            K+= len(string)-i
-        else:
-            S+=len(string)-i
-    if S>K:
-        print("Stuart"+" "+ "%d" % S)
-    elif K>S:
-        print("Kevin"+" "+'%d' % K)
-    else:
-        print("Draw")
-            
 ########################################################################################################################
 '''
 010: Merge the Tools!
@@ -316,16 +256,17 @@ sample = input() # 1222311
 empty_list = []
 
 for i,c in groupby(sample):
-    c_len = len(list(c))
+    #print(i, *c) c is set up in the list by default
+    #1 1
+    #2 2 2 2
+    #3 3
+    #1 1 1
+    c_len = len(list(c)) # list(c) only works for groupby() 
     show = (c_len, int(i))
     empty_list.append(show)
 print(*empty_list)
                   
-#print(i, *c) c is set up in the list by default
-#1 1
-#2 2 2 2
-#3 3
-#1 1 1
+
 ########################################################################################################################
 '''
 013: [Coming from itertools]Iterables and Iterators
@@ -451,7 +392,7 @@ for k in range(len(b)):#k=1,2
   Score : Fail
   Reason : Thought this can only be solved using OrderDictionary
   Topic : OrderDictionary() -> Counter()
-  Explain : Counter can solve this.
+  Explain : Counter can solve this. Creative !!
 '''
 #Input
 '''
@@ -480,33 +421,16 @@ print(*counts.values())
 ########################################################################################################################
 '''
 017: [Coming from Collections]Piling Up!
-  Score : Fail
-  Reason : Did not understand questions
-  Topic : loop()
-  Explain : Complicated loop function
+#### MERGED TO 'creative.py' 
 '''
-#Input
+########################################################################################################################
 '''
-STDIN        Function
------        --------
-2            T = 2
-6            blocks[] size n = 6
-4 3 2 1 3 4  blocks = [4, 3, 2, 1, 3, 4]
-3            blocks[] size n = 3
-1 3 2        blocks = [1, 3, 2]
+018: [Coming from Python Functionals]Map and Lambda Function
+#### MERGED TO 'creative.py' 
 '''
-#Output
+########################################################################################################################
 '''
-Yes
-No
+019: [Coming from Python Functionals]Validating Email Addresses With a Filter
+#### MERGED TO 'creative.py' 
 '''
-t=int(input()) # t = 2
 
-for _ in range(t):
-    n = int(input()) #6
-    l = list(map(int, input().split())) #[4, 3, 2, 1, 3, 4] #[1, 3, 2]
-    
-    if(l[0]==max(l) or l[n-1]==max(l)): # Either
-        print("Yes")
-    else: 
-        print("No")
