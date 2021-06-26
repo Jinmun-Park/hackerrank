@@ -181,3 +181,36 @@ if __name__ == '__main__':
 filtered_emails = filter_mail(emails)
 filtered_emails.sort()
 print(filtered_emails)
+########################################################################################################################
+'''
+020: [Coming from Debugging] Words Score
+  Score : Success (Worth studying)
+  Reason : -
+  Topic : Complex Loop
+  Explain : Counter can solve this. Creative !!
+'''
+#Input
+'''
+3
+programming is awesome
+'''
+#Output
+'''
+4
+If even +2, odd +1
+'''
+def is_vowel(letter):
+    return letter in ['a', 'e', 'i', 'o', 'u', 'y']
+
+def score_words(words):
+    score = 0
+    for word in words: #programming/is/awesome
+        num_vowels = 0
+        for letter in word:#p,r,o,g,r,a,m,m,i,ng
+            if is_vowel(letter):
+                num_vowels += 1
+        if num_vowels % 2 == 0: # if even
+            score += 2
+        else:#
+            score += 1
+    return score
