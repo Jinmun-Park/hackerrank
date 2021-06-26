@@ -465,3 +465,68 @@ for k in range(len(b)):#k=1,2
         print(*c)
     else:
         print("-1")
+########################################################################################################################
+'''
+016: [Coming from Collections]Word Order
+  Score : Fail
+  Reason : Thought this can only be solved using OrderDictionary
+  Topic : OrderDictionary() -> Counter()
+  Explain : Counter can solve this.
+'''
+#Input
+'''
+4
+bcdef
+abcdefg
+bcde
+bcdef
+'''
+#Output
+'''
+3
+2 1 1
+'''
+from collections import Counter
+
+n = int(input())
+list_word = []
+for _ in range(n):
+    words = input().strip()
+    list_word.append(words)
+
+counts = Counter(list_word)
+print(len(counts))
+print(*counts.values())
+########################################################################################################################
+'''
+017: [Coming from Collections]Piling Up!
+  Score : Fail
+  Reason : Did not understand questions
+  Topic : loop()
+  Explain : Complicated loop function
+'''
+#Input
+'''
+STDIN        Function
+-----        --------
+2            T = 2
+6            blocks[] size n = 6
+4 3 2 1 3 4  blocks = [4, 3, 2, 1, 3, 4]
+3            blocks[] size n = 3
+1 3 2        blocks = [1, 3, 2]
+'''
+#Output
+'''
+Yes
+No
+'''
+t=int(input()) # t = 2
+
+for _ in range(t):
+    n = int(input()) #6
+    l = list(map(int, input().split())) #[4, 3, 2, 1, 3, 4] #[1, 3, 2]
+    
+    if(l[0]==max(l) or l[n-1]==max(l)): # Either
+        print("Yes")
+    else: 
+        print("No")
