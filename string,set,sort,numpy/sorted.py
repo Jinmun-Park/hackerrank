@@ -15,8 +15,8 @@ any([j == j[::-1] for j in n]))
 
 ########################################################################################################################
 
-''''''
 '''
+
 001: [Coming from String]Merge the Tools!
   Score : Failed
   Reason : Tried using Counter() instead of Set(). This happened because i did not know how to use sorted(key)
