@@ -68,7 +68,58 @@ def minion_game(string):
         print("Kevin"+" "+'%d' % K)
     else:
         print("Draw")
-            
+########################################################################################################################         
+'''
+015: [Coming from Collections]DefaultDict 
+  Score : Complete Fail
+  Reason : Did not know using loop insteat of *Count() and *DefaultDict
+  Topic : Counter(), for()
+  Explain : Incredible!
+'''
+#Input
+'''
+STDIN   Function
+-----   --------
+5 2     group A size n = 5, group B size m = 2
+a       group A contains 'a', 'a', 'b', 'a', 'b'
+a
+b
+a
+b
+a       group B contains 'a', 'b'
+b
+'''
+#Output
+'''
+1 2 4
+3 5
+'''
+n, m = list(map(int,input().split()))
+
+a=[]
+b=[]
+
+for i in range(n):
+    a.append(input())
+    # a = [a,a,b,a,b]
+for j in range(m):
+    b.append(input())
+    # b = [a,b] imagine b = [a,b,c]
+for k in range(len(b)):
+    # k = 0,1
+    c=[]
+    for h in range(len(a)):
+     # h = 0,1,2,3,4,5
+        if b[k]==a[h]: '''important'''
+        # Codintion that has two different iterator. 
+        # b[0] = 'a'
+        # a[0] = 'a' 
+            c.append(h+1) '''important'''
+            # h + 1 is required to find the index. range() give from 0, but index should be 1 in the question
+    if len(c)>0:
+        print(*c)
+    else:
+        print("-1")
 ########################################################################################################################
 '''
 017: [Coming from Collections]Piling Up!
