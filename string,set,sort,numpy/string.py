@@ -343,49 +343,8 @@ print(total)
 ########################################################################################################################
 '''
 015: [Coming from Collections]DefaultDict 
-  Score : Complete Fail
-  Reason : Did not know using loop insteat of *Count() and *DefaultDict
-  Topic : Counter(), for()
-  Explain : Incredible!
+  #### MERGED TO 'creative.py' 
 '''
-#Input
-'''
-STDIN   Function
------   --------
-5 2     group A size n = 5, group B size m = 2
-a       group A contains 'a', 'a', 'b', 'a', 'b'
-a
-b
-a
-b
-a       group B contains 'a', 'b'
-b
-'''
-#Output
-'''
-1 2 4
-3 5
-'''
-n, m = list(map(int,input().split()))
-
-a=[]
-b=[]
-
-for i in range(n):
-    a.append(input())
-    
-for j in range(m):
-    b.append(input())
-    
-for k in range(len(b)):#k=1,2
-    c=[]
-    for h in range(len(a)):#h=0,1,2,3,4,5
-        if b[k]==a[h]:# b=a,b,(c)
-            c.append(h+1) '''important'''
-    if len(c)>0:
-        print(*c)
-    else:
-        print("-1")
 ########################################################################################################################
 '''
 016: [Coming from Collections]Word Order
