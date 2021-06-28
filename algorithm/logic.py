@@ -98,10 +98,15 @@ Input
 9
 10 5 20 20 4 5 2 25 1
 '''
-
 '''
 Output
 2 4
+Explanation
+ Game  Score  Minimum  Maximum   Min  Max
+     0      12     12        12       0   0
+     1      24     12       *24       0   1
+     2      10     *10       24       1   1
+     3      24     10        24       1   1
 '''
 
 def breakingRecords(scores):
@@ -114,25 +119,12 @@ def breakingRecords(scores):
         if i > high:
             highest += 1
             #loop can continue in the condition
-            high = i '''VERY IMPORTANT'''
+            high = i '''VERY IMPORTANT : high will be replaced if meets the condition'''
         if i < low:
             lowest += 1
             low = i
+        '''Else is not needed. Then what happens to the first index ? Interesting'''
     return (highest, lowest)
-
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
-
-    n = int(input().strip())
-
-    scores = list(map(int, input().rstrip().split()))
-
-    result = breakingRecords(scores)
-
-    fptr.write(' '.join(map(str, result)))
-    fptr.write('\n')
-
-    fptr.close()
 ########################################################################################################################
 '''
 004 : [Comming from Implementation] Subarray Division
@@ -161,7 +153,8 @@ def birthday(s, d, m):
     # 'm' is to be dived into two elements that should be equal to 'd'
     count = 0    
     for i in range(0,len(s)+1-m): #range(0, 5+1-2 = 4)
-        if sum(s[i:i+m]) == d: #s[0:2],,s[1:3],, == 3
+        if sum(s[i:i+m]) == d: '''IMPORTANT : enable to sum in the range. The range of sum will also move'''
+        #s[0:2],,s[1:3],, == 3 
             count+=1
     return count
   
@@ -211,12 +204,13 @@ STDIN                       Function
 '''
 Output
 3
+(Only matching sox can be use, 2 or 3)
 '''
 
 def sockMerchant(n, ar):
     count = Counter(ar)
     c = 0
-    for i,v in count.items():
+    for i,v in count.items(): # v is number of count
         if v % 2 == 0:
             c+=(v/2)
         elif (v % 2 != 0) and (v > 1):
@@ -326,7 +320,7 @@ def catAndMouse(x, y, z):
   Score : Failed
   Reason : index can be measured using len(), but enumerate() is complex.
   Topic : len(), for() + while
-  Explain : Cannot understand logic yet
+  Explain : ****Cannot understand logic yet
 '''
 '''
 INPUT
