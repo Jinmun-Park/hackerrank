@@ -345,3 +345,101 @@ def climbingLeaderboard(ranked, player):
 
     return result
 ########################################################################################################################
+'''
+011 : [Comming from Implementation] Diagonal Difference
+
+'''
+'''
+11
+   5
+     -12
+     4
+   5
+10
+'''
+def diagonalDifference(arr):
+    primSum = 0
+    secSum = 0    
+    
+    for row in range(n): #n = 3
+        primSum += arr[row][row] #arr[0][0],,,[2][2]
+        secSum += arr[row][n - 1 - row] #arr[0][2],,,
+    return abs(primSum - secSum)
+
+########################################################################################################################
+'''
+012 : [Comming from Implementation] Designer PDF Viewer
+'''
+'''
+INPUT
+1 3 1 3 1 4 1 3 2 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+abc
+OUTPUT
+9
+'''
+from itertools import product
+
+def designerPdfViewer(h, word):
+    l =[]
+    for i in word:
+        l.append(h[ord(i)-ord('a')]) '''ord(i) givs the sequence of word in ACSI. If we deduct from the first word 'a'.'''
+    return (len(l)*max(l))
+
+########################################################################################################################
+'''
+013 : [Comming from Implementation] Compare the Triplets
+'''
+'''
+INPUT
+5 6 7
+3 6 10
+
+OUTPUT
+1 1
+
+Explanation
+A : (5>3) point 1, 
+B : (10>7) point 1
+1 1
+'''
+def compareTriplets(a, b):
+    score = [0, 0] '''IMPORTANT : This is the only way to present answer accordingly'''
+    for a, b in zip(a, b): '''HACKER FORMAT : a[] b[] format will not show us the value'''
+        if a > b:
+            score[0]+= 1
+        elif b > a:
+            score[1]+=1
+    return score
+    
+########################################################################################################################
+'''
+014 : [Comming from Implementation] Angry Professor
+'''
+'''
+INPUT
+2
+4 3  *(n=4, k=3)
+-1 -3 4 2
+4 2
+0 -1 2 1
+
+OUTPUT
+YES
+NO
+
+Explanation
+if a[i] > 0 is late, a[i] =< 0 is early
+'''
+def angryProfessor(k, a):
+    early = 0 
+    late = 0
+    for i in a:
+        if int(i) > 0:
+            late = late + 1
+        elif int(i) <= 0:
+            early = early + 1
+
+    return("NO" if k <= early else "YES")  '''way format is matter in return'''
+    
+########################################################################################################################
+https://www.hackerrank.com/challenges/the-hurdle-race/problem
