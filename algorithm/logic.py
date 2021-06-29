@@ -7,7 +7,9 @@ Tips
 '''
 
 # TIPS 01
-
+'''HACKERRANK FORMAT : return [] only allows you to see the result '''
+def beautifulDays(i, j, k):
+  return [i for i in range(i,j)]
 
 # TIPS 02
 
@@ -440,6 +442,28 @@ def angryProfessor(k, a):
             early = early + 1
 
     return("NO" if k <= early else "YES")  '''way format is matter in return'''
+    
+########################################################################################################################
+'''
+015 : [Comming from Implementation] Beautiful Days at the Movies
+'''
+'''
+INPUT
+20 23 6
+
+OUTPUT
+2
+
+Explanation
+1. range(20,23+1)
+2. make reversed : int(str(day)[::-1]. for example 20 -> 2 / 21 -> 12
+3. then |20-21|/k. if its divisibe then count 1
+'''
+def beautifulDays(i, j, k):
+
+    beautifulDays = [1 for day in range(i, j+1) if (day - int(str(day)[::-1])) % k == 0]
+    return(sum(beautifulDays))
+    ''' HACKERRANK FORMAT : return [i for i in range(i,j)] '''
     
 ########################################################################################################################
 https://www.hackerrank.com/challenges/the-hurdle-race/problem
