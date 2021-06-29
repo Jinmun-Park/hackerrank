@@ -12,6 +12,9 @@ def beautifulDays(i, j, k):
   return [i for i in range(i,j)]
 
 # TIPS 02
+'''HACKERRANK FORMAT : if your digit is set as '1234' but you have to split into [1],[2],[3],[4] '''
+for d in str(n):
+    digit = int(d)
 
 ########################################################################################################################
 '''
@@ -464,6 +467,178 @@ def beautifulDays(i, j, k):
     beautifulDays = [1 for day in range(i, j+1) if (day - int(str(day)[::-1])) % k == 0]
     return(sum(beautifulDays))
     ''' HACKERRANK FORMAT : return [i for i in range(i,j)] '''
+    
+########################################################################################################################
+'''
+016 : [Comming from Implementation] Circular Array Rotation
+'''
+'''
+INPUT
+3 2 3 #n,k,q
+1 2 3 #a 
+0 #queries
+1 #queries
+2 #queires
+
+OUTPUT
+2
+3
+1
+
+'''
+from collections import deque
+
+def circularArrayRotation(a, k, queries):
+    # Write your code here
+    l = []
+    
+    for i in a:
+        l.append(i)
+    number = deque(l)
+    number.rotate(k) #Right rotattion is +k/ Left is -k
+    '''IMPORTANT : [] bracket outside return '''
+    '''IMPORTANT : queries are stored in list and it has to be called using loop '''
+    return [number[num] for num in queries] 
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    first_multiple_input = input().rstrip().split()
+
+    n = int(first_multiple_input[0])
+
+    k = int(first_multiple_input[1])
+
+    q = int(first_multiple_input[2])
+
+    a = list(map(int, input().rstrip().split()))
+
+    queries = []
+
+    for _ in range(q): '''IMPORT : INITIAL SETUP'''
+        queries_item = int(input().strip())
+        queries.append(queries_item)
+
+    result = circularArrayRotation(a, k, queries)
+
+    fptr.write('\n'.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
+    
+########################################################################################################################
+''' ************ IMPORTANT ***************
+017 : [Comming from Implementation] Sequence Equation
+'''
+'''
+INPUT
+3
+2 3 1
+
+OUTPUT
+2 
+3
+1
+
+EXPLANATION
+1. p =[5,2,1,3,4]
+2. enumerate(start=1) :
+  1:5  2:2 3:1 4:3 ,,,,
+3. covert dic to make data pull in loop, but value(5,2,1,3,4) as key and sequence(1,2,3,4,5) as value in dictianry
+  5:1, 2:2 1:3 **3:4 **4:5,,,,
+4. Now pick. For ex) x=3(sequence in n, example) p[3] = 4, p[4] = 5
+5. 5 will be our answer in my example. validation would be original, x=3(example sequence) then p[5] = 4 p[4]=3 this is equal as x. 
+'''
+def permutationEquation(p):
+    p = {v:k for k, v in enumerate(p,start=1)}
+    return [p[p[i]] for i in range(1, n+1)]
+    
+########################################################################################################################
+''' ************ IMPORTANT ***************
+018 : [Comming from Implementation] Find Digits
+'''
+'''
+EXPLANATION
+if your digits is in '1234' but you have to divide into '[1][2][3][4]'
+'''
+def findDigits(n):
+    count = 0
+    for d in str(n):
+        digit = int(d)
+        if (digit > 0) and (n % digit == 0):
+            count+=1
+    return count
+    
+########################################################################################################################
+''' ************ IMPORTANT ***************
+019 : [Comming from Implementation] Cut the sticks
+'''
+'''
+EXPLANATION
+sticks-length     length-of-cut   *sticks-cut
+5 4 4 *2 *2 8          2               6
+3 *2 *2 _ _ 6          2               4
+*1  _ _ _ _ 4          1               2
+_  _  _ _ _ 3          3               1
+_ _ _ _ _ _          DONE            DONE
+
+Its important that sticks-cut is actually counting number of deduction to element, (min=2, then deducts 6 elements who is > min)
+However, we can count element who are above min. If we can build loop to next sequence.
+'''
+def cutTheSticks(arr):
+    results = [] 
+    while len(arr) >= 1: '''IMPORTANT : This will be in loop'''
+        results.append(len(arr))
+        minlen = min(arr)
+        arr = [i for i in arr if i>minlen] '''This will be iterated'''
+    return results
+    
+########################################################################################################################
+''' ************ IMPORTANT ***************
+020 : [Comming from Implementation] Repeated String
+'''
+'''
+INPUT
+aba
+10 (10 characters in total, abaabaabaa)
+
+OUTPUT 
+7
+
+EXPLANATION
+c = c * div+s[:m].count('a')
+Count * Division(n/len(s)) + Remainder
+'''
+def repeatedString(s, n):
+    c = s.count('a')
+    div = n//len(s)
+    if n % len(s)==0:
+        c = c * div
+    else:
+        m = n%len(s)
+        c= c*div+s[:m].count('a')
+        # Count * Division(n/len(s)) + Remainder
+    return c
+    
+########################################################################################################################
+''' 
+021 : [Comming from Implementation] Equalize the Array
+'''
+'''
+INPUT
+STDIN       Function
+-----       --------
+5           arr[] size n = 5
+3 3 2 1 3   arr = [3, 3, 2, 1, 3]
+
+OUTPUT 
+2 
+
+EXPLANATION
+Eliminate indexes(minimal number) to leave elements with equal values
+'''
+def equalizeArray(arr):
+    return (n - max([arr.count(t) for t in set(arr)]))
     
 ########################################################################################################################
 https://www.hackerrank.com/challenges/the-hurdle-race/problem
