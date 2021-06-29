@@ -73,6 +73,9 @@ print(*[i for i,v in cap_room.items() if int(v) == 1]) # I do not know *[] only 
 '''
 5
 12 9 61 5 14 
+
+Condition 1: All the integers in the list are positive.
+Condition 2: 5 is a palindromic integer. (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22,,,)
 '''
 #Output
 '''
