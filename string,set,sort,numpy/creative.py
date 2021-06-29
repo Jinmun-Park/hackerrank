@@ -220,7 +220,7 @@ def fun(s):
     return True
 
 def filter_mail(emails):
-    return list(filter(fun, emails))
+    return list(filter(fun, emails)) '''IMPORTANT'''
     # Filter returns filtered value, this returne email that give 'True'
 
 if __name__ == '__main__':
