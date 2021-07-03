@@ -6,6 +6,10 @@
 The area under the curve indicates the probability that a person will have a height within a range of possible values
 To calculate p-values, you add up the percentages of areas under the curve, including left and right
 
+### Cross-Validation
+Cross validation allows us to compare different machine learning methods and get a sense of how well they will work in practice.
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/001_cv.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/002_cv.PNG" width="450" height="250">
+
 ### Linear Regression
 Use a linear squares to fit a line to the data. 
 1. First, we calculate the `least squared errors`
@@ -46,3 +50,4 @@ What if we have 3 variables to be in PCA Plot?
 <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/009_pca.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/010_pca.PNG" width="450" height="250">
 
 [PCA]: https://www.youtube.com/watch?v=FgakZw6K1QQ&ab_channel=StatQuestwithJoshStarmer
+***
