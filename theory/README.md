@@ -21,9 +21,19 @@ A PCA plot converts the correlations among all of the cells(features) into a 2D-
 
 <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/001_pca.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/002_pca.PNG" width="450" height="250">
 
-
-
 1. Look at datasets with 2 genes.(X:Gene1, Y:Gene2). Then, we calculate the center of the data.
 2. Shift the data to the center, origin (0,0).
+3. Draw a random line on the origin and project data onto it.
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/003_pca.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/004_pca.PNG" width="450" height="250">
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/005_pca.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/006_pca.PNG" width="450" height="250">
+
+4. We measure sum of squared distance, SS(Distance), to remove negative values.
+5. Rotate lines on origin untill we end up with the line with the largest SS(Distnace)
+6. This is PC1. Hence, PC1 is linear combination of given variables. 
+7. PC2 is simply the line through the origing that is perpendicular to PC1.
+8. Rotate PC1 and PC2 as PC1 is on horizontal line.Then we use projected lines to find where samples go in PCA Plot.
+9. This is Singular Value Decomposition (SVD)
 
 [PCA]: https://www.youtube.com/watch?v=FgakZw6K1QQ&ab_channel=StatQuestwithJoshStarmer
