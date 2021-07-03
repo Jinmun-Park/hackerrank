@@ -2,13 +2,13 @@
 [Youtube_Starquest][Starquest] <br/>
 
 ## Topic 1 : Fundamental knowledge Recap
-### 1. P-Value
+### PART 1 : P-Value
 The area under the curve indicates the probability that a person will have a height within a range of possible values
 To calculate p-values, you add up the percentages of areas under the curve, including left and right
 
 ***
 
-### Central Limit Theorem
+### PART 2 : Central Limit Theorem
 In statistics, we collect more means from more samples, these means will be 'normally distributed.' <br/>
 * 0.273 is the likelihood p=0.5 given that 4 out of 7 people would randomly prefer orange juice
 
@@ -16,8 +16,10 @@ In statistics, we collect more means from more samples, these means will be 'nor
 
 ***
 
-### Maximum Likelihood
+### PART 3 : Maximum Likelihood
 In statistics, maximum likelihood estimation (MLE) is a method of estimating the parameters of a statistical model given observations, by finding the parameter values that maximize the likelihood of making the observations given the parameters. <br/>
+
+Logistic Regression uses Maximum Likelihood. <br/>
 * 0.273 is the likelihood p=0.5 given that 4 out of 7 people would randomly prefer orange juice
 
 <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/001_mxl.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/002_mxl.PNG" width="450" height="250">
@@ -26,14 +28,14 @@ In statistics, maximum likelihood estimation (MLE) is a method of estimating the
 
 ***
 
-### Cross-Validation
+### PART 4 : Cross-Validation
 Cross validation allows us to compare different machine learning methods and get a sense of how well they will work in practice.
 
 <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/001_cv.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/002_cv.PNG" width="450" height="250">
 
 ***
 
-### Overfitting
+### PART 5 : Overfitting
 Cross validation allows us to compare different machine learning methods and get a sense of how well they will work in practice.
 
 <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/001_ml.PNG" width="450" height="250"> 
@@ -44,7 +46,7 @@ Cross validation allows us to compare different machine learning methods and get
 
 ***
 
-### Linear Regression
+### PART 1 : Linear Regression
 Use a linear squares to fit a line to the data. 
 1. First, we calculate the `least squared errors`
 2. Then we measure `R squares` : 
@@ -55,7 +57,7 @@ Use a linear squares to fit a line to the data.
 
 ***
 
-### Ridge Regression
+### PART 2 : Ridge Regression
 Lets say we have two variables and we run linear regression. If we have limited data and our linear line may be overfitting but high variance.
 
 <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/001_ridge.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/001_ridge.PNG" width="450" height="250">
@@ -66,6 +68,36 @@ We add Weight into regression makes our regression adding bias. In Ridge regress
 
 <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/003_ridge.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/004_ridge.PNG" width="450" height="250">
 
+Least squares cannot find the minimal sum of squared residuals if there are lack of data for a given variables. However, Ridge can help this by :
+1. Cross Validation
+2. Ridge Regression Penalty (Weight)
+
+### PART 3 : Lasso Regressio
+Lasso Regression is similar to Ridge, but very important difference.
+
+* Formula adds an absolute value ahead.
+* Just like Ridge, Lasso also contains all of the estimated parameters except y-intercept
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/005_ridge.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/006_ridge.PNG" width="450" height="250">
+
+The biggest difference is :
+* Ridge can only shrink the slope  asymptotically close to 0.
+* Lasso can shrink all the slope to 0.
+
+Lasso can exclude useless variables from equation. It is better than Ridge at reducing the variance that contains alot of useless variables.
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/007_ridge.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/008_ridge.PNG" width="450" height="250">
+
+### PART 4 : Elastic Net
+If we have a model that includes tons of data.
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/009_ridge.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/010_ridge.PNG" width="450" height="250">
+
+Hyrid Elastic-Net regression is good at dealing with situations when there are correlations between paramenters. This is because ;
+* Lasso tends to pick just one of the correlated terms and eliminate the others
+* Ridge tends to shrink all of the parameters for the correlated variables together.
+
+By combining Lasso and Ridge shrinks the parameters associated with the correlated variables or remove them at once.
 
 
 ## Topic 3 : Clustering 
