@@ -36,4 +36,13 @@ A PCA plot converts the correlations among all of the cells(features) into a 2D-
 8. Rotate PC1 and PC2 as PC1 is on horizontal line.Then we use projected lines to find where samples go in PCA Plot.
 9. This is Singular Value Decomposition (SVD)
 
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/007_pca.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/008_pca.PNG" width="450" height="250">
+
+What if we have 3 variables to be in PCA Plot?
+1. We calculate principal componetst 
+2. With the eigenvalues, we determines 2D-graph
+3. Draw 2D graph with the data 
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/009_pca.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/010_pca.PNG" width="450" height="250">
+
 [PCA]: https://www.youtube.com/watch?v=FgakZw6K1QQ&ab_channel=StatQuestwithJoshStarmer
