@@ -134,7 +134,34 @@ What if we have 3 variables to be in PCA Plot?
 
 <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/009_pca.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/010_pca.PNG" width="450" height="250">
 
-
 ***
+
+## Topic 4 : Machine Learning Fundamental 
+
+### PART 1 : Confusion Matrix
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/001_mlfundamental.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/002_mlfundamental.PNG" width="450" height="250">
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/003_mlfundamental.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/004_mlfundamental.PNG" width="450" height="250">
+***
+
+### PART 2 : Gradient Descent
+Gradient Descent can optimize all these things ;
+* We fit a line with linear regression to optimize the intercept and slope.
+* We use logistc regression to optimize squiggle
+* We use t-SNE to optimize cluster
+
+1. We find intercept using gradient descent and move our intercepts to get different sum of squared residuals. <br/>
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/001_gradientdescent.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/002_gradientdescent.PNG" width="450" height="250">
+
+2. Gradient descent does a few calculations far from the optimal solution. Then, it increases the number of calculations closer to the optimal value. Gradient descent finds
+the minimum value by taking steps from an initial guess unitll it reaches the best value.<br/>
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/003_gradientdescent.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/004_gradientdescent.PNG" width="450" height="250">
+
+3. To recap, we use the sum of squared residuals as 'residuals' to evaluate how well a line fits the data. Then, we derivate it.
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/005_gradientdescent.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/006_gradientdescent.PNG" width="450" height="250">
 
 [Starquest]:https://www.youtube.com/channel/UCtYLUTtgS3k1Fg4y5tAhLbw
