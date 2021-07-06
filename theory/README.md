@@ -281,5 +281,50 @@ Lets understand the marign ;
 
 <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/005_svm.PNG" width="450" height="250">
 
+***
+
+### PART 5 : Randome Forest
+#### Bagging
+
+1. Create bootstrap dataset. Bootstrap is randomly selected from original dataset.
+2. But we only use a random subset of variables at each step
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/001_rf.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/002_svm.PNG" width="450" height="250">
+
+3. Repeat the work.
+4. Impute the output data into trees we builts.
+
+* Bagging : Bootstrap data with aggregation.
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/003_rf.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/004_svm.PNG" width="450" height="250">
+
+5. How do we know this model is good. We are using out-of-bag data, data that is not included in bootstrap data,
+
+***
+
+### PART 6 : XGboost
+#### It was designed to use in large data, complicated data sets.
+#### XGboost uses unique regress tree
+
+1. We get an averge as our initial prediction. 
+2. Every tree starts out with a single leaf and we calculate 'Similarity Score.' A single leaf stores all residuals.
+3. Labmda is regularization parameter
+4. Then we move one step next to measure similarity scores. Then we measure 'gain score.'
+5. We repeat till we shift our threshold is over in our tree and get all 'gain scores.'
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/001_xgb.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/002_xgb.PNG" width="450" height="250">
+
+6. We choose the best gain threshold.
+7. Then we continue spilit threshold one after to get the best gain.
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/003_xgb.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/004_xgb.PNG" width="450" height="250">
+
+8. Now we have to talk about 'prune'
+9. We do this by deducting 'gamma' to our similarity scores.
+10. Lambda is intended to reduce the prediction's sensitivity to individual observations.
+11. 
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/005_xgb.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/006_xgb.PNG" width="450" height="250">
+
+
 
 [Starquest]:https://www.youtube.com/channel/UCtYLUTtgS3k1Fg4y5tAhLbw
