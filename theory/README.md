@@ -151,9 +151,17 @@ What if we have 3 variables to be in PCA Plot?
 <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/001_mlfundamental.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/002_mlfundamental.PNG" width="450" height="250">
 
 <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/003_mlfundamental.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/004_mlfundamental.PNG" width="450" height="250">
+
 ***
 
-### PART 2 : Gradient Descent
+### PART 2 : ROC&AUC
+In this example, we use logistic regression to build ROC & AUC. Confusion matrix matters in each threshold as it results large number of confusion matrix.
+1. ROC graph summarizes all of the confusion matrices that each threshold produced. 
+2. AUC helps you decide which categorization method is better. Its same as ROC
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/001_roc.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/002_roc.PNG" width="450" height="250">
+
+### PART 3 : Gradient Descent
 Gradient Descent can optimize all these things ;
 * We fit a line with linear regression to optimize the intercept and slope.
 * We use logistc regression to optimize squiggle
@@ -222,5 +230,31 @@ NOTE : 0.5 is very common threshhold for making classification decisions based o
 We cannot just add them to get prediction because our inputs were logged at the ifrst time. So we use the formula to get the output. We use learning rate (Commonly 0.1).
 
 <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/013_gradientboost.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/014_gradientboost.PNG" width="450" height="250">
+
+
+***
+
+### PART 4 : SVM
+#### SVM can handle outliers
+
+Lets understand the marign ;
+1. When we use the threshold that gives the larges marign, its called Maximal Marginal Classifier.
+2. However, Maximal Margin Classifier is very sensitive to outliers.
+3. To resolve this, we have to allow misclassification. Then we called Soft Margin
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/001_svm.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/002_svm.PNG" width="450" height="250">
+
+4. We use cross validation to determine how many misclassification and observations to allow inside soft margin.
+5. Soft Vector Classifier comes from the fact that the observation is on the edge and within soft margin.
+6. When data are 4 or more dimensions, SVC (Classification) is hyperplane. 
+7. SVM overcomes the data problem that SVC cannot solve.
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/003_svm.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/004_svm.PNG" width="450" height="250">
+
+8. SVM overcomes the data problem that SVC cannot solve.
+9. First, SVM starts with lo dimension. Second, moves data into higher dimension. Then, find SVC.
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/005_svm.PNG" width="450" height="250">
+
 
 [Starquest]:https://www.youtube.com/channel/UCtYLUTtgS3k1Fg4y5tAhLbw
