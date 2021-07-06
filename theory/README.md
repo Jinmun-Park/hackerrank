@@ -161,6 +161,8 @@ In this example, we use logistic regression to build ROC & AUC. Confusion matrix
 
 <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/001_roc.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/002_roc.PNG" width="450" height="250">
 
+***
+
 ### PART 3 : Gradient Descent
 Gradient Descent can optimize all these things ;
 * We fit a line with linear regression to optimize the intercept and slope.
@@ -181,6 +183,29 @@ the minimum value by taking steps from an initial guess unitll it reaches the be
 <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/005_gradientdescent.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/006_gradientdescent.PNG" width="450" height="250">
 
 ***
+
+### PART 4 : Prune
+
+In this example, we use simple tree to understand Prune. <br/>
+Outliers in our tree makes overfits the regression tree. So we replace the split with a leaf that is the average of outliers <br/>
+
+* The point is, how do we decide which tree tou use ? 
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/001_prune.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/002_prune.PNG" width="450" height="250">
+
+Cost complexity pruning is to calculate the sum of squared residuals for each tree.
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/003_prune.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/004_prune.PNG" width="450" height="250">
+
+We calculate tree scores by adding, Tree Complex Penalty. Which results the more trees, more penalty.Then how do we find alpha value ?
+1. We use all the data (training + test) to build regression tree.
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/005_prune.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/006_prune.PNG" width="450" height="250">
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/007_prune.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/008_prune.PNG" width="450" height="250">
+
+***
+
 
 # Topic 5 : Machine Learning
 
