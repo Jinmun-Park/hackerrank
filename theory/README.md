@@ -1,7 +1,10 @@
 # Knowledge Recap
 [Youtube_Starquest][Starquest] <br/>
 
-## Topic 1 : Fundamental knowledge Recap
+# Topic 1 : Fundamental knowledge Recap
+
+***
+
 ### PART 1 : P-Value
 The area under the curve indicates the probability that a person will have a height within a range of possible values
 To calculate p-values, you add up the percentages of areas under the curve, including left and right
@@ -42,7 +45,7 @@ Cross validation allows us to compare different machine learning methods and get
 
 ***
 
-## Topic 2 : Regression
+# Topic 2 : Regression
 
 ***
 
@@ -72,6 +75,8 @@ Least squares cannot find the minimal sum of squared residuals if there are lack
 1. Cross Validation
 2. Ridge Regression Penalty (Weight)
 
+***
+
 ### PART 3 : Lasso Regressio
 Lasso Regression is similar to Ridge, but very important difference.
 
@@ -88,6 +93,8 @@ Lasso can exclude useless variables from equation. It is better than Ridge at re
 
 <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/007_ridge.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/008_ridge.PNG" width="450" height="250">
 
+***
+
 ### PART 4 : Elastic Net
 If we have a model that includes tons of data.
 
@@ -99,8 +106,9 @@ Hyrid Elastic-Net regression is good at dealing with situations when there are c
 
 By combining Lasso and Ridge shrinks the parameters associated with the correlated variables or remove them at once.
 
+***
 
-## Topic 3 : Clustering 
+# Topic 3 : Clustering 
 
 ***
 
@@ -136,7 +144,7 @@ What if we have 3 variables to be in PCA Plot?
 
 ***
 
-## Topic 4 : Machine Learning Fundamental 
+# Topic 4 : Machine Learning Fundamental 
 
 ### PART 1 : Confusion Matrix
 
@@ -163,5 +171,56 @@ the minimum value by taking steps from an initial guess unitll it reaches the be
 3. To recap, we use the sum of squared residuals as 'residuals' to evaluate how well a line fits the data. Then, we derivate it.
 
 <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/005_gradientdescent.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/006_gradientdescent.PNG" width="450" height="250">
+
+***
+
+# Topic 5 : Machine Learning
+
+***
+
+### PART 1 : Gradient Boosting (Continuous Value)
+
+Gradient boost is used to predict a continuous value.
+1. Gradient boost starts by making a single leaf, instead of tree. The leaf represents an initial guess for the weight of all samples. The first guess is the average value.
+2. Then we builds a tree. 
+3. Gradient boost scales all trees by the same amount.
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/001_gradientboost.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/002_gradientboost.PNG" width="450" height="250">
+
+4. Calculate the residuals on leaf with its average.
+5. Predict values by plus the residuals.
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/003_gradientboost.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/004_gradientboost.PNG" width="450" height="250">
+
+6. Gradient boost deals with overfitting using learning rate (0~1). We scale them using learning rate.
+7. We are making trees untill we reach maximum specified.
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/005_gradientboost.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/006_gradientboost.PNG" width="450" height="250">
+
+***
+
+### PART 2 : Gradient Boosting (Regression)
+Loss function is just something that evaluates how well we can predict Y. Loss function is sum of squared residuals.
+
+1. The derivation in equation results to the average
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/007_gradientboost.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/008_gradientboost.PNG" width="450" height="250">
+
+2. The steps are complicated to make a summary here. 
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/009_gradientboost.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/010_gradientboost.PNG" width="450" height="250">
+
+***
+
+### PART 3 : Gradient Boosting (Classification)
+
+When we use gradient boost for classification, the initial prediction for every individual is the log. <br/>
+NOTE : 0.5 is very common threshhold for making classification decisions based on probability.
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/011_gradientboost.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/012_gradientboost.PNG" width="450" height="250">
+
+We cannot just add them to get prediction because our inputs were logged at the ifrst time. So we use the formula to get the output. We use learning rate (Commonly 0.1).
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/013_gradientboost.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/014_gradientboost.PNG" width="450" height="250">
 
 [Starquest]:https://www.youtube.com/channel/UCtYLUTtgS3k1Fg4y5tAhLbw
