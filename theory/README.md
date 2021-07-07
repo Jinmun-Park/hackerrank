@@ -9,6 +9,8 @@
 The area under the curve indicates the probability that a person will have a height within a range of possible values
 To calculate p-values, you add up the percentages of areas under the curve, including left and right
 
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/001_pvalue.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/002_pvalue.PNG" width="450" height="250">
+
 ***
 
 ### PART 2 : Central Limit Theorem
@@ -99,6 +101,18 @@ Lasso can exclude useless variables from equation. It is better than Ridge at re
 If we have a model that includes tons of data.
 
 <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/009_ridge.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/010_ridge.PNG" width="450" height="250">
+
+Hyrid Elastic-Net regression is good at dealing with situations when there are correlations between paramenters. This is because ;
+* Lasso tends to pick just one of the correlated terms and eliminate the others
+* Ridge tends to shrink all of the parameters for the correlated variables together.
+
+By combining Lasso and Ridge shrinks the parameters associated with the correlated variables or remove them at once.
+
+***
+
+### PART 5 : Naive Bayes
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/001_naive.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/002_naive.PNG" width="450" height="250">
 
 Hyrid Elastic-Net regression is good at dealing with situations when there are correlations between paramenters. This is because ;
 * Lasso tends to pick just one of the correlated terms and eliminate the others
