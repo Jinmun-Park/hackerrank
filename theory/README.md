@@ -47,6 +47,19 @@ Cross validation allows us to compare different machine learning methods and get
 
 ***
 
+### PART 6 : Error metrics
+https://www.jedox.com/en/blog/error-metrics-how-to-evaluate-forecasts/
+
+
+### PART 7 : Standard & MaxMin scaler
+StandardScaler removes the mean and scales the data to unit variance. However, the outliers have an influence when computing the empirical mean and standard deviation which shrink the range of the feature values as shown in the left figure below. Note in particular that because the outliers on each feature have different magnitudes, the spread of the transformed data on each feature is very different: most of the data lie in the [-2, 4] range for the transformed median income feature while the same data is squeezed in the smaller [-0.2, 0.2] range for the transformed number of households. <br/>
+
+StandardScaler therefore cannot guarantee balanced feature scales in the presence of outliers. <br/>
+
+MinMaxScaler rescales the data set such that all feature values are in the range [0, 1] as shown in the right panel below. However, this scaling compress all inliers in the narrow range [0, 0.005] for the transformed number of households.<br/>
+
+Both StandardScaler and MinMaxScaler are very sensitive to the presence of outliers.
+
 # Topic 2 : Regression
 
 ***
