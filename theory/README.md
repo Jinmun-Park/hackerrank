@@ -333,6 +333,7 @@ Lets understand the marign ;
 #### It was designed to use in large data, complicated data sets.
 #### XGboost uses unique regress tree
 
+#### Hyperparameter : https://www.kaggle.com/felipefiorini/xgboost-hyper-parameter-tuning
 1. We get an averge as our initial prediction. 
 2. Every tree starts out with a single leaf and we calculate 'Similarity Score.' A single leaf stores all residuals.
 3. Labmda is regularization parameter
