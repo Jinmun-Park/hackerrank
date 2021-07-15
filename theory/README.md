@@ -144,7 +144,7 @@ By combining Lasso and Ridge shrinks the parameters associated with the correlat
 ***
 
 ### 1. PCA 
-
+[PCA][PCA_Usage] <br/>
 A PCA plot converts the correlations among all of the cells(features) into a 2D-graph.
 
 <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/001_pca.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/002_pca.PNG" width="450" height="250">
@@ -172,6 +172,16 @@ What if we have 3 variables to be in PCA Plot?
 3. Draw 2D graph with the data 
 
 <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/009_pca.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/010_pca.PNG" width="450" height="250">
+
+***
+
+### 2. KNN 
+
+[KNN_URL][KNN_Usage]
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/001_knn.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/002_knn.PNG" width="450" height="250">
+
+<img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/003_knn.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/004_knn.PNG" width="450" height="250">
 
 ***
 
@@ -362,3 +372,4 @@ Lets understand the marign ;
 [Starquest]:https://www.youtube.com/channel/UCtYLUTtgS3k1Fg4y5tAhLbw
 [PCA_Usage]:https://www.analyticsvidhya.com/blog/2016/03/pca-practical-guide-principal-component-analysis-python/
 [MLP_Usage]:https://machinelearningmastery.com/time-series-forecasting-methods-in-python-cheat-sheet/
+[KNN_Usage]:https://www.youtube.com/watch?v=4HKqjENq9OU&ab_channel=Simplilearn
