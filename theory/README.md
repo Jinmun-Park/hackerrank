@@ -1,7 +1,8 @@
 # Knowledge Recap
 [Youtube_Starquest][Starquest] <br/>
 https://yongwookha.github.io/MachineLearning/2021-01-29-interview-question <br/>
-https://lifeofdori.tistory.com/14
+https://lifeofdori.tistory.com/14 <br/>
+[PCA][PCA_Usage]
 
 # Topic 1 : Fundamental knowledge Recap
 
@@ -358,3 +359,5 @@ Lets understand the marign ;
 
 
 [Starquest]:https://www.youtube.com/channel/UCtYLUTtgS3k1Fg4y5tAhLbw
+[PCA_Usage]:https://www.analyticsvidhya.com/blog/2016/03/pca-practical-guide-principal-component-analysis-python/
+
