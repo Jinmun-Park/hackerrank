@@ -2,8 +2,9 @@
 [Youtube_Starquest][Starquest] <br/>
 https://yongwookha.github.io/MachineLearning/2021-01-29-interview-question <br/>
 https://lifeofdori.tistory.com/14 <br/>
-[PCA][PCA_Usage]
-[MLP][MLP_Usage]
+[PCA][PCA_Usage] <br/>
+[MLP][MLP_Usage] <br/>
+[Normal_Distribution][Distribution_Usage]
 
 # Topic 1 : Fundamental knowledge Recap
 
@@ -373,3 +374,4 @@ Lets understand the marign ;
 [PCA_Usage]:https://www.analyticsvidhya.com/blog/2016/03/pca-practical-guide-principal-component-analysis-python/
 [MLP_Usage]:https://machinelearningmastery.com/time-series-forecasting-methods-in-python-cheat-sheet/
 [KNN_Usage]:https://www.youtube.com/watch?v=4HKqjENq9OU&ab_channel=Simplilearn
+[Distribution_Usage]:https://rpubs.com/Statdoc/204929
