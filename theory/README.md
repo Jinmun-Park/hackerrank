@@ -4,7 +4,8 @@ https://yongwookha.github.io/MachineLearning/2021-01-29-interview-question <br/>
 https://lifeofdori.tistory.com/14 <br/>
 [PCA][PCA_Usage] <br/>
 [MLP][MLP_Usage] <br/>
-[Normal_Distribution][Distribution_Usage]
+[Normal_Distribution][Distribution_Usage] <br/>
+[XGBoost_summary][XGboost]
 
 # Topic 1 : Fundamental knowledge Recap
 
@@ -375,3 +376,5 @@ Lets understand the marign ;
 [MLP_Usage]:https://machinelearningmastery.com/time-series-forecasting-methods-in-python-cheat-sheet/
 [KNN_Usage]:https://www.youtube.com/watch?v=4HKqjENq9OU&ab_channel=Simplilearn
 [Distribution_Usage]:https://rpubs.com/Statdoc/204929
+[XGboost]:https://blog.naver.com/PostView.naver?blogId=ollehw&logNo=222107432424&parentCategoryNo=&categoryNo=7&viewDate=&isShowPopularPosts=false&from=postView
+
