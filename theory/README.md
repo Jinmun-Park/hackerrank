@@ -1,7 +1,7 @@
 # Knowledge Recap
 [Youtube_Starquest][Starquest] <br/>
-https://yongwookha.github.io/MachineLearning/2021-01-29-interview-question <br/>
-https://lifeofdori.tistory.com/14 <br/>
+[Q&A_collection][A_collection] <br/>
+[Q_collection][collection] <br/>
 [PCA][PCA_Usage] <br/>
 [MLP][MLP_Usage] <br/>
 [Normal_Distribution][Distribution_Usage] <br/>
@@ -377,4 +377,5 @@ Lets understand the marign ;
 [KNN_Usage]:https://www.youtube.com/watch?v=4HKqjENq9OU&ab_channel=Simplilearn
 [Distribution_Usage]:https://rpubs.com/Statdoc/204929
 [XGboost]:https://blog.naver.com/PostView.naver?blogId=ollehw&logNo=222107432424&parentCategoryNo=&categoryNo=7&viewDate=&isShowPopularPosts=false&from=postView
-
+[collection]:https://lifeofdori.tistory.com/14
+[A_collection]:https://yongwookha.github.io/MachineLearning/2021-01-29-interview-question
