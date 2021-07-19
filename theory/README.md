@@ -6,6 +6,7 @@
 [MLP][MLP_Usage] <br/>
 [Normal_Distribution][Distribution_Usage] <br/>
 [XGBoost_summary][XGboost]
+[KNN][KNN_Usage]
 
 # Topic 1 : Fundamental knowledge Recap
 
@@ -179,7 +180,7 @@ What if we have 3 variables to be in PCA Plot?
 
 ### 2. KNN 
 
-[KNN_URL][KNN_Usage]
+[KNN_URL][KNN_Videos]
 
 <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/001_knn.PNG" width="450" height="250">  <img src="https://github.com/Jinmun-Park/hackerrank/blob/main/theory/images/002_knn.PNG" width="450" height="250">
 
@@ -374,8 +375,9 @@ Lets understand the marign ;
 [Starquest]:https://www.youtube.com/channel/UCtYLUTtgS3k1Fg4y5tAhLbw
 [PCA_Usage]:https://www.analyticsvidhya.com/blog/2016/03/pca-practical-guide-principal-component-analysis-python/
 [MLP_Usage]:https://machinelearningmastery.com/time-series-forecasting-methods-in-python-cheat-sheet/
-[KNN_Usage]:https://www.youtube.com/watch?v=4HKqjENq9OU&ab_channel=Simplilearn
+[KNN_Videos]:https://www.youtube.com/watch?v=4HKqjENq9OU&ab_channel=Simplilearn
 [Distribution_Usage]:https://rpubs.com/Statdoc/204929
 [XGboost]:https://blog.naver.com/PostView.naver?blogId=ollehw&logNo=222107432424&parentCategoryNo=&categoryNo=7&viewDate=&isShowPopularPosts=false&from=postView
 [collection]:https://lifeofdori.tistory.com/14
 [A_collection]:https://yongwookha.github.io/MachineLearning/2021-01-29-interview-question
+[KNN_Usage]:https://blog.naver.com/jaehong7719/221924486981
