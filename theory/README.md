@@ -5,7 +5,7 @@
 [PCA][PCA_Usage] <br/>
 [MLP][MLP_Usage] <br/>
 [Normal_Distribution][Distribution_Usage] <br/>
-[XGBoost_summary][XGboost]
+[XGBoost_summary][XGboost] <br/>
 [KNN][KNN_Usage]
 
 # Topic 1 : Fundamental knowledge Recap
