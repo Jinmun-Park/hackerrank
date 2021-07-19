@@ -6,7 +6,8 @@
 [MLP][MLP_Usage] <br/>
 [Normal_Distribution][Distribution_Usage] <br/>
 [XGBoost_summary][XGboost] <br/>
-[KNN][KNN_Usage]
+[KNN][KNN_Usage] <br/?
+[Hyperparameter][Hyperparameter] <br/?
 
 # Topic 1 : Fundamental knowledge Recap
 
@@ -381,3 +382,4 @@ Lets understand the marign ;
 [collection]:https://lifeofdori.tistory.com/14
 [A_collection]:https://yongwookha.github.io/MachineLearning/2021-01-29-interview-question
 [KNN_Usage]:https://blog.naver.com/jaehong7719/221924486981
+[Hyperparameter]:https://machinelearningmastery.com/hyperparameters-for-classification-machine-learning-algorithms/
