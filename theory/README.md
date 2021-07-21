@@ -9,6 +9,7 @@
 [KNN][KNN_Usage] <br/>
 [Hyperparameter][Hyperparameter] <br/>
 [GridSearch][GridSearch] <br/>
+[GradientBoosting][Gridentboosting] <br/>
 
 # Topic 1 : Fundamental knowledge Recap
 
@@ -385,3 +386,4 @@ Lets understand the marign ;
 [KNN_Usage]:https://blog.naver.com/jaehong7719/221924486981
 [Hyperparameter]:https://machinelearningmastery.com/hyperparameters-for-classification-machine-learning-algorithms/
 [GridSearch]:https://www.mygreatlearning.com/blog/gridsearchcv/
+[Gridentboosting]:https://blog.naver.com/jaehong7719/221950378451
