@@ -1,10 +1,20 @@
-# Knowledge Recap
+# URL
+### Youtube
 [Youtube_Starquest][Starquest] <br/>
+
+### Fundamental Thetories
+[Normal_Distribution][Distribution_Usage] <br/>
+[Logistic_Pro_Cons][Logistic_Pro_Cons] 
+
+### Questions & Answers
 [Q&A_collection][A_collection] <br/>
 [Q_collection][collection] <br/>
+
+### Dimension Reduction
 [PCA][PCA_Usage] <br/>
+
+### Algorithm
 [MLP][MLP_Usage] <br/>
-[Normal_Distribution][Distribution_Usage] <br/>
 [XGBoost_summary][XGboost] <br/>
 [KNN][KNN_Usage] <br/>
 [Hyperparameter][Hyperparameter] <br/>
@@ -387,3 +397,4 @@ Lets understand the marign ;
 [Hyperparameter]:https://machinelearningmastery.com/hyperparameters-for-classification-machine-learning-algorithms/
 [GridSearch]:https://www.mygreatlearning.com/blog/gridsearchcv/
 [Gridentboosting]:https://blog.naver.com/jaehong7719/221950378451
+[Logistic_Pro_Cons]:https://www.geeksforgeeks.org/advantages-and-disadvantages-of-logistic-regression/
