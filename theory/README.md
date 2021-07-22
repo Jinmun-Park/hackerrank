@@ -4,7 +4,8 @@
 
 ### Fundamental Thetories
 [Normal_Distribution][Distribution_Usage] <br/>
-[Logistic_Pro_Cons][Logistic_Pro_Cons] 
+[Logistic_Pro_Cons][Logistic_Pro_Cons] <br/>
+[Boosting vs Bagging][boosting and bagging]
 
 ### Questions & Answers
 [Q&A_collection][A_collection] <br/>
@@ -400,3 +401,4 @@ Lets understand the marign ;
 [Gridentboosting]:https://blog.naver.com/jaehong7719/221950378451
 [Logistic_Pro_Cons]:https://www.geeksforgeeks.org/advantages-and-disadvantages-of-logistic-regression/
 [KNN_Pro_Cons]:https://dhirajkumarblog.medium.com/top-4-advantages-and-disadvantages-of-support-vector-machine-or-svm-a3c06a2b107
+[boosting and bagging]:https://blog.naver.com/ilovelatale/222320553535
