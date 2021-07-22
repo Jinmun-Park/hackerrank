@@ -17,6 +17,7 @@
 [MLP][MLP_Usage] <br/>
 [XGBoost_summary][XGboost] <br/>
 [KNN][KNN_Usage] <br/>
+[KNN_Pro_Cons][KNN_Pro_Cons] <br/>
 [Hyperparameter][Hyperparameter] <br/>
 [GridSearch][GridSearch] <br/>
 [GradientBoosting][Gridentboosting] <br/>
@@ -398,3 +399,4 @@ Lets understand the marign ;
 [GridSearch]:https://www.mygreatlearning.com/blog/gridsearchcv/
 [Gridentboosting]:https://blog.naver.com/jaehong7719/221950378451
 [Logistic_Pro_Cons]:https://www.geeksforgeeks.org/advantages-and-disadvantages-of-logistic-regression/
+[KNN_Pro_Cons]:https://dhirajkumarblog.medium.com/top-4-advantages-and-disadvantages-of-support-vector-machine-or-svm-a3c06a2b107
