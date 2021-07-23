@@ -7,6 +7,7 @@
 [Logistic_Pro_Cons][Logistic_Pro_Cons] <br/>
 [Boosting vs Bagging][boosting and bagging] <br/>
 [Deeplearning vs machinelearning][Deeplearning vs machinelearning]
+[Error_Metrics][Error_Metrics]
 
 ### Questions & Answers
 [Q&A_collection][A_collection] <br/>
@@ -406,3 +407,4 @@ Lets understand the marign ;
 [KNN_Pro_Cons]:https://dhirajkumarblog.medium.com/top-4-advantages-and-disadvantages-of-support-vector-machine-or-svm-a3c06a2b107
 [boosting and bagging]:https://blog.naver.com/ilovelatale/222320553535
 [Deeplearning vs machinelearning]:https://blog.naver.com/jalhaja0/222144933457
+[Error_Metrics]:https://partrita.github.io/posts/regression-error/
