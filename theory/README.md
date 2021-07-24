@@ -26,6 +26,7 @@
 [GradientBoosting][Gridentboosting] <br/>
 
 ### Neural Network
+[ActivationFunction][ActivationFunction]
 
 # Topic 1 : Fundamental knowledge Recap
 
@@ -408,3 +409,4 @@ Lets understand the marign ;
 [boosting and bagging]:https://blog.naver.com/ilovelatale/222320553535
 [Deeplearning vs machinelearning]:https://blog.naver.com/jalhaja0/222144933457
 [Error_Metrics]:https://partrita.github.io/posts/regression-error/
+[ActivationFunction]:https://blog.naver.com/wogjs7147/222430756533
