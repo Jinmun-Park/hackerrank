@@ -19,6 +19,7 @@
 ### Algorithm
 [MLP][MLP_Usage] <br/>
 [XGBoost_summary][XGboost] <br/>
+[XGBoost_classification][XGboost_classification] <br/>
 [KNN][KNN_Usage] <br/>
 [KNN_Pro_Cons][KNN_Pro_Cons] <br/>
 [Hyperparameter][Hyperparameter] <br/>
@@ -410,3 +411,4 @@ Lets understand the marign ;
 [Deeplearning vs machinelearning]:https://blog.naver.com/jalhaja0/222144933457
 [Error_Metrics]:https://partrita.github.io/posts/regression-error/
 [ActivationFunction]:https://blog.naver.com/wogjs7147/222430756533
+[XGboost_classification]:https://www.kaggle.com/lucidlenn/data-analysis-and-classification-using-xgboost
