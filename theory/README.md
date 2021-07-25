@@ -7,7 +7,8 @@
 [Logistic_Pro_Cons][Logistic_Pro_Cons] <br/>
 [Boosting vs Bagging][boosting and bagging] <br/>
 [Deeplearning vs machinelearning][Deeplearning vs machinelearning]
-[Error_Metrics][Error_Metrics]
+[Error_Metrics][Error_Metrics] <br/>
+[Confusion_Metrics][Confusion_Metrics]
 
 ### Questions & Answers
 [Q&A_collection][A_collection] <br/>
@@ -412,3 +413,4 @@ Lets understand the marign ;
 [Error_Metrics]:https://partrita.github.io/posts/regression-error/
 [ActivationFunction]:https://blog.naver.com/wogjs7147/222430756533
 [XGboost_classification]:https://www.kaggle.com/lucidlenn/data-analysis-and-classification-using-xgboost
+[Confusion_Metrics]:https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall
