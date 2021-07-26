@@ -6,7 +6,7 @@
 [Normal_Distribution][Distribution_Usage] <br/>
 [Logistic_Pro_Cons][Logistic_Pro_Cons] <br/>
 [Boosting vs Bagging][boosting and bagging] <br/>
-[Deeplearning vs machinelearning][Deeplearning vs machinelearning]
+[Deeplearning vs machinelearning][Deeplearning vs machinelearning] <br/>
 [Error_Metrics][Error_Metrics] <br/>
 [Confusion_Metrics][Confusion_Metrics]
 
