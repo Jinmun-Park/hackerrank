@@ -65,7 +65,9 @@ TYPE : Advanced Select
 
 SAMPLE OUTPUT
 
-
+Jenny    Ashley     Meera  Jane
+Samantha Christeen  Priya  Julia
+NULL     Ketty      NULL   Maria
 '''
 SET @r1=0, @r2=0, @r3=0, @r4=0;
 SELECT min(Doctor), min(Professor), min(Singer), min(Actor) '''it will return The "LOWEST" element from each column (which happened to be the first element)'''
