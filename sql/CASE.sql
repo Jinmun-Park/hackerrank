@@ -80,7 +80,7 @@ FROM(
     case when Occupation='Doctor' then Name end as Doctor,
     case when Occupation='Professor' then Name end as Professor,
     case when Occupation='Singer' then Name end as Singer,
-    case when Occupation='Actor' then Name end as Actor
+    case when Occupation='Actor' then Name end as Actor '''2 Columns [PARK, DOCTOR] -> Put name into 4 new columns [D, P, S, A]'''
   FROM OCCUPATIONS
   ORDER BY Name
     ) temp
