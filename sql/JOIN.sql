@@ -2,6 +2,13 @@
 NAME : The Report
 TYPE : Basic Join
 
+EXPLAIN
+Ketty doesnt want the NAMES of those students who received a grade lower than 8. The report must be in descending order by grade -- 
+i.e. higher grades are entered first. 
+If there is more than one student with the same grade (8-10) assigned to them, order those particular students by their name alphabetically. 
+Finally, if the grade is lower than 8, use "NULL" as their name and list them by their grades in descending order. 
+If there is more than one student with the same grade (1-7) assigned to them, order those particular students by their marks in ascending order.
+
 ANSWER 
 Maria 10 99
 Jane 9 81
@@ -26,6 +33,11 @@ ORDER BY
 NAME : Top Competitors
 TYPE : Basic Join
 
+EXPLAIN
+print the respective hacker_id and name of hackers who achieved full scores for more than one challenge. 
+Order your output in descending order by the total number of challenges in which the hacker earned a full score. 
+If more than one hacker received full scores in same number of challenges, then sort them by ascending hacker_id.
+
 ANSWER 
 Maria 10 99
 Jane 9 81
@@ -34,23 +46,23 @@ Scarlet 8 78
 NULL 7 63
 NULL 7 68
 '''
-select 
+SELECT 
     h.hacker_id, h.name
-from submissions s
-inner join challenges c
-on s.challenge_id = c.challenge_id
-inner join difficulty d
-on c.difficulty_level = d.difficulty_level 
-inner join hackers h
-on s.hacker_id = h.hacker_id
-where 
+FROM submissions s
+inner JOIN challenges c
+ON s.challenge_id = c.challenge_id
+inner JOIN difficulty d
+ON c.difficulty_level = d.difficulty_level 
+inner JOIN hackers h
+ON s.hacker_id = h.hacker_id
+WHERE 
     s.score = d.score 
-group by '''To count hacker_id'''
+GROUP BY '''To count hacker_id'''
     h.hacker_id, h.name
-having  '''Important'''
-    count(s.hacker_id) > 1
-order by 
-    count(s.hacker_id) desc, s.hacker_id asc
+HAVING  '''Important'''
+    COUNT(s.hacker_id) > 1
+ORDER BY
+    COUNT(s.hacker_id) DESC, s.hacker_id ASC
     
 ''' ******************************************************************************************************
 NAME : Ollivanders Inventory
@@ -107,3 +119,33 @@ challenge_counter =(
     ) AS aux_table)
 ORDER BY challenge_counter DESC, h.hacker_id ASC;
 
+''' ****************************************************************************************************** 
+NAME : Contest Leaderboard
+TYPE : Basic Join
+
+The total score of a hacker is the sum of their maximum scores for all of the challenges. 
+Write a query to print the hacker_id, name, and total score of the hackers ordered by the descending score. 
+If more than one hacker achieved the same total score, then sort the result by ascending hacker_id. 
+Exclude all hackers with a total score of  from your result.
+'''
+SELECT 
+    h.hacker_id, 
+    name, 
+    sum(score) AS total_score
+FROM hackers AS h inner join
+    (SELECT 
+        hacker_id,
+        max(score) as score
+     FROM 
+        submissions 
+     GROUP BY 
+        challenge_id, 
+        hacker_id) max_score
+ON h.hacker_id=max_score.hacker_id
+GROUP BY 
+    h.hacker_id, name
+HAVING 
+    total_score > 0
+ORDER BY 
+    total_score desc, 
+    h.hacker_id
