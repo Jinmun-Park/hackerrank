@@ -12,6 +12,7 @@
 
 ### Questions & Answers
 [Q&A_collection][A_collection] <br/>
+[Q&A_collection_2][B_collection] <br/>
 [Q_collection][collection] <br/>
 [Data Engineer][Data Engineer] <br/>
 ### Dimension Reduction
@@ -415,3 +416,4 @@ Lets understand the marign ;
 [XGboost_classification]:https://www.kaggle.com/lucidlenn/data-analysis-and-classification-using-xgboost
 [Confusion_Metrics]:https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall
 [Data Engineer]:https://ko.myservername.com/top-29-data-engineer-interview-questions
+[B_collection]:https://shelling203.tistory.com/35
