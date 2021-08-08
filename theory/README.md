@@ -13,7 +13,7 @@
 ### Questions & Answers
 [Q&A_collection][A_collection] <br/>
 [Q_collection][collection] <br/>
-
+[Data Engineer][Data Engineer] <br/>
 ### Dimension Reduction
 [PCA][PCA_Usage] <br/>
 
@@ -414,3 +414,4 @@ Lets understand the marign ;
 [ActivationFunction]:https://blog.naver.com/wogjs7147/222430756533
 [XGboost_classification]:https://www.kaggle.com/lucidlenn/data-analysis-and-classification-using-xgboost
 [Confusion_Metrics]:https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall
+[Data Engineer]:https://ko.myservername.com/top-29-data-engineer-interview-questions
