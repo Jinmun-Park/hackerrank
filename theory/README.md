@@ -3,6 +3,8 @@
 [Youtube_Starquest][Starquest] <br/>
 
 ### Fundamental Thetories
+[Big_data][Big_data] <br/>
+[CRISP_DM][CRISP_DM] <br/>
 [Normal_Distribution][Distribution_Usage] <br/>
 [Logistic_Pro_Cons][Logistic_Pro_Cons] <br/>
 [Boosting vs Bagging][boosting and bagging] <br/>
@@ -417,3 +419,5 @@ Lets understand the marign ;
 [Confusion_Metrics]:https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall
 [Data Engineer]:https://ko.myservername.com/top-29-data-engineer-interview-questions
 [B_collection]:https://shelling203.tistory.com/35
+[Big_data]:https://blog.naver.com/thebaleuncoding/222429049541
+[CRISP_DM]:https://blog.naver.com/ji_sung31/222404174799
