@@ -29,7 +29,8 @@
 [Hyperparameter][Hyperparameter] <br/>
 [GridSearch][GridSearch] <br/>
 [GradientBoosting][Gridentboosting] <br/>
-[PCA_Korean][PCA_Korean]
+[PCA_Korean][PCA_Korean] <br/>
+[Gradient_Descent][Gradient_Descent] 
 
 ### Neural Network
 [ActivationFunction][ActivationFunction]
@@ -423,3 +424,4 @@ Lets understand the marign ;
 [Big_data]:https://blog.naver.com/thebaleuncoding/222429049541
 [CRISP_DM]:https://blog.naver.com/ji_sung31/222404174799
 [PCA_Korean]:https://heung-bae-lee.github.io/2020/04/03/machine_learning_07/
+[Gradient_Descent]:[Gradient_Descent]
