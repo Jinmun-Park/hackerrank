@@ -37,6 +37,8 @@
 
 ### Neural Network
 [ActivationFunction][ActivationFunction]
+[When_to_use_nn][When_to_use_nn]
+[Types_of_nn][Types_of_nn]
 
 # Topic 1 : Fundamental knowledge Recap
 
@@ -431,3 +433,5 @@ Lets understand the marign ;
 [T_test]:https://junsik-hwang.tistory.com/8
 [T_test_tail]:https://m.blog.naver.com/mykepzzang/220886418140
 [Hetro_Homo]:https://blog.naver.com/jws2218/222139632277
+[When_to_use_nn]:https://machinelearningmastery.com/when-to-use-mlp-cnn-and-rnn-neural-networks/
+[Types_of_nn]:https://blog.naver.com/eded0902/222449407651
