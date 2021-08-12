@@ -2,7 +2,10 @@
 ### Youtube
 [Youtube_Starquest][Starquest] <br/>
 
-### Fundamental Thetories
+### Fundamental Theories
+[T_test][T_test] <br/>
+[T_test_tail][T_test_tail] <br/>
+[Hetro_Homo][Hetro_Homo] <br/>
 [Big_data][Big_data] <br/>
 [CRISP_DM][CRISP_DM] <br/>
 [Normal_Distribution][Distribution_Usage] <br/>
@@ -425,3 +428,6 @@ Lets understand the marign ;
 [CRISP_DM]:https://blog.naver.com/ji_sung31/222404174799
 [PCA_Korean]:https://heung-bae-lee.github.io/2020/04/03/machine_learning_07/
 [Gradient_Descent]:https://blog.naver.com/beyondlegend/222161152322
+[T_test]:https://junsik-hwang.tistory.com/8
+[T_test_tail]:https://m.blog.naver.com/mykepzzang/220886418140
+[Hetro_Homo]:https://blog.naver.com/jws2218/222139632277
