@@ -25,6 +25,7 @@
 
 ### Algorithm
 [MLP][MLP_Usage] <br/>
+[Understand_MLP][Understand_MLP] <br/>
 [XGBoost_summary][XGboost] <br/>
 [XGBoost_classification][XGboost_classification] <br/>
 [KNN][KNN_Usage] <br/>
@@ -36,9 +37,9 @@
 [Gradient_Descent][Gradient_Descent] 
 
 ### Neural Network
-[ActivationFunction][ActivationFunction]
-[When_to_use_nn][When_to_use_nn]
-[Types_of_nn][Types_of_nn]
+[ActivationFunction][ActivationFunction] <br/>
+[When_to_use_nn][When_to_use_nn] <br/>
+[Types_of_nn][Types_of_nn] <br/>
 
 # Topic 1 : Fundamental knowledge Recap
 
@@ -435,3 +436,4 @@ Lets understand the marign ;
 [Hetro_Homo]:https://blog.naver.com/jws2218/222139632277
 [When_to_use_nn]:https://machinelearningmastery.com/when-to-use-mlp-cnn-and-rnn-neural-networks/
 [Types_of_nn]:https://blog.naver.com/eded0902/222449407651
+[Understand_MLP]:https://de-novo.org/2018/04/17/%EC%9D%B8%EA%B3%B5%EC%8B%A0%EA%B2%BD%EB%A7%9D-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-2-%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0%EA%B3%BC-%EC%8B%A0%EA%B2%BD%EB%A7%9D/
