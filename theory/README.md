@@ -15,7 +15,8 @@
 [Deeplearning vs machinelearning][Deeplearning vs machinelearning] <br/>
 [Error_Metrics][Error_Metrics] <br/>
 [Confusion_Metrics][Confusion_Metrics] <br/>
-[Confusion_metrics_details][Confusion_metrics_details]
+[Confusion_metrics_details][Confusion_metrics_details] <br/>
+[Overfitting][Overfitting]
 
 ### Questions & Answers
 [Q&A_collection][A_collection] <br/>
@@ -441,3 +442,4 @@ Lets understand the marign ;
 [Understand_MLP]:https://de-novo.org/2018/04/17/%EC%9D%B8%EA%B3%B5%EC%8B%A0%EA%B2%BD%EB%A7%9D-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-2-%ED%8D%BC%EC%85%89%ED%8A%B8%EB%A1%A0%EA%B3%BC-%EC%8B%A0%EA%B2%BD%EB%A7%9D/
 [Confusion_metrics_details]:https://bcho.tistory.com/1206
 [Error_type]:https://bioinformaticsandme.tistory.com/148
+[Overfitting]:https://blog.naver.com/ter1943/221911484164
