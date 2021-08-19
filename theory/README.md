@@ -17,6 +17,7 @@
 [Confusion_Metrics][Confusion_Metrics] <br/>
 [Confusion_metrics_details][Confusion_metrics_details] <br/>
 [Overfitting][Overfitting]
+[Oversampling][Oversampling]
 
 ### Questions & Answers
 [Q&A_collection][A_collection] <br/>
@@ -443,3 +444,4 @@ Lets understand the marign ;
 [Confusion_metrics_details]:https://bcho.tistory.com/1206
 [Error_type]:https://bioinformaticsandme.tistory.com/148
 [Overfitting]:https://blog.naver.com/ter1943/221911484164
+[Oversampling]:https://blog.naver.com/hajuny2903/222427411561
