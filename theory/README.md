@@ -36,6 +36,7 @@
 [KNN_Pro_Cons][KNN_Pro_Cons] <br/>
 [Hyperparameter][Hyperparameter] <br/>
 [GridSearch][GridSearch] <br/>
+[GridSearch_Hyperparameter][GridSearch_Hyperparameter] <br/>
 [GradientBoosting][Gridentboosting] <br/>
 [PCA_Korean][PCA_Korean] <br/>
 [Gradient_Descent][Gradient_Descent] 
@@ -445,3 +446,4 @@ Lets understand the marign ;
 [Error_type]:https://bioinformaticsandme.tistory.com/148
 [Overfitting]:https://blog.naver.com/ter1943/221911484164
 [Oversampling]:https://blog.naver.com/hajuny2903/222427411561
+[GridSearch_Hyperparameter]:https://www.analyticsvidhya.com/blog/2016/03/complete-guide-parameter-tuning-xgboost-with-codes-python/
