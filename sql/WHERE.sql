@@ -1,4 +1,8 @@
 '''
+NAME : New Companies
+TYPE : Advanced Select
+TOOL : COUNT(DISTINCT()), WHERE()
+
 Sample Output
 
 C1 Monika 1 2 1 2
