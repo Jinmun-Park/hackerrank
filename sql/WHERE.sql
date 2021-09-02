@@ -7,7 +7,7 @@ Sample Output
 
 C1 Monika 1 2 1 2
 C2 Samantha 1 1 2 2
-''' ------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------ '''
 SELECT 
     c.company_code, 
     c.founder, 
@@ -37,7 +37,7 @@ Sample Output
 
 C1 Monika 1 2 1 2
 C2 Samantha 1 1 2 2
-''' ------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------ ''' 
 SELECT 
     IF(GRADE < 8, NULL, NAME), '''Q asks for Null on Name only'''
     GRADE, 
@@ -59,7 +59,7 @@ TOOL : WHERE(), HAVING()
 EXPLANATION :
 Write a query to print the respective hacker_id and name of hackers who achieved full scores(*) for more than one challenge(*) 
 
-''' ------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------ ''' 
 SELECT 
     H.HACKER_ID,
     H.NAME
@@ -77,4 +77,29 @@ GROUP BY H.HACKER_ID, H.NAME
 ORDER BY
     COUNT(H.HACKER_ID) DESC, H.HACKER_ID ASC
     
-    
+''' ------------------------------------------------------------------------------------------------------------
+NAME : Ollivanders Inventory
+TYPE : Basic Join
+EXPLAIN 
+Hermione decides the best way to choose is by determining the minimum number of gold galleons needed to buy each non-evil wand of high power and age. 
+Write a query to print the id, age, coins_needed, and power of the wands that Rons interested in, sorted in order of descending power. 
+If more than one wand has same power, sort the result in order of descending age.
+------------------------------------------------------------------------------------------------------------ ''' 
+
+SELECT W.id, P.age, W.coins_needed, W.power ''' Q : NEEDS TO PRINT AGE,POWER AFTER GROUP BY. SO IT NEEDS TO HAVE 2 * SELECT '''
+FROM WANDS AS W
+    INNER JOIN WANDS_PROPERTY AS P ON W.code = P.code
+WHERE P.is_evil = 0 AND (W.coins_needed, P.age, W.power) IN  
+    (SELECT 
+        MIN(W1.coins_needed),
+        P1.age, 
+        W1.power
+    FROM WANDS AS W1 INNER JOIN 
+        WANDS_PROPERTY AS P1 ON 
+        W1.code = P1.code
+    GROUP BY '''Q IS POORLY STATED. IT NEEDS TO BE GROUP BY BOTH AGE,POWER'''
+        P1.age, 
+        W1.power)
+ORDER BY W.power DESC, P.age DESC
+
+
