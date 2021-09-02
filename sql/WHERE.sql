@@ -39,7 +39,7 @@ C1 Monika 1 2 1 2
 C2 Samantha 1 1 2 2
 ------------------------------------------------------------------------------------------------------------ ''' 
 SELECT 
-    IF(GRADE < 8, NULL, NAME), '''Q asks for Null on Name only'''
+    IF(GRADE < 8, NULL, NAME), '''Q asks for Null on Name only. HENCE, WE ARE NOT USING HAVING HERE'''
     GRADE, 
     MARKS
 FROM 
