@@ -37,5 +37,5 @@ WHERE c.company_code = l.company_code
      AND l.company_code = s.company_code
      AND s.company_code = m.company_code
      AND m.company_code = e.company_code
-GROUP BY c.company_code, c.founder
+GROUP BY c.company_code, c.founder '''C.FOUNDER IS IMPORTANT'''
 ORDER BY c.company_code;
