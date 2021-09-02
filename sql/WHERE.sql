@@ -51,3 +51,28 @@ ORDER BY
     G.GRADE DESC,
     NAME
     
+''' ------------------------------------------------------------------------------------------------------------
+NAME : Top Competitors
+TYPE : Basic Join
+TOOL : WHERE(), HAVING()
+
+EXPLANATION :
+Write a query to print the respective hacker_id and name of hackers who achieved full scores(*) for more than one challenge(*) 
+
+''' ------------------------------------------------------------------------------------------------------------
+SELECT 
+    H.HACKER_ID,
+    H.NAME
+FROM
+    SUBMISSIONS S INNER JOIN CHALLENGES C 
+        ON S.CHALLENGE_ID = C.CHALLENGE_ID
+    INNER JOIN DIFFICULTY D
+        ON C.DIFFICULTY_LEVEL = D.DIFFICULTY_LEVEL
+    INNER JOIN HACKERS H
+        ON S.HACKER_ID = H.HACKER_ID    
+WHERE
+    S.SCORE = D.SCORE '''Q : HACKERS WHO ACHIEVED FULL SCORES'''
+GROUP BY H.HACKER_ID, H.NAME
+    HAVING COUNT(H.HACKER_ID) > 1
+ORDER BY
+    COUNT(H.HACKER_ID) DESC, H.HACKER_ID ASC
