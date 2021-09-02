@@ -33,21 +33,21 @@ Samantha(D)
 There are a total of 2 doctors.
 '''
 
-SELECT 
-    CONCAT(NAME, CONCAT('(', SUBSTR(OCCUPATION,1,1), ')'))
+SELECT
+    CONCAT(NAME, '(', SUBSTR(OCCUPATION,1,1), ')')
 FROM
-    OCCUPATIONS
+    OCCUPATIONS 
 ORDER BY
     NAME;
-    
-SELECT 
-    CONCAT('There are a total of', CONCAT(' ',CONCAT(COUNT(OCCUPATION), CONCAT(' ', CONCAT(LOWER(OCCUPATION),'s.'))))) as TOTAL 
-FROM 
-    OCCUPATIONS
-GROUP BY 
-    OCCUPATION 
-ORDER BY 
-    TOTAL;
+
+SELECT
+    CONCAT('There are a total of ', COUNT(OCCUPATION), ' ', LOWER(OCCUPATION), 's.') 
+FROM
+    OCCUPATIONS 
+GROUP BY
+    OCCUPATION
+ORDER BY
+    COUNT(OCCUPATION);
 
 
 ''' ******************************************************************************************************
