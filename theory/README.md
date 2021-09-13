@@ -41,6 +41,9 @@
 [PCA_Korean][PCA_Korean] <br/>
 [Gradient_Descent][Gradient_Descent] 
 
+### XGBOOST HYPERPARAMETER
+[xgboost_hyperparameter][xgboost_hyperparameter] <br/>
+
 ### Neural Network
 [ActivationFunction][ActivationFunction] <br/>
 [When_to_use_nn][When_to_use_nn] <br/>
@@ -447,3 +450,4 @@ Lets understand the marign ;
 [Overfitting]:https://blog.naver.com/ter1943/221911484164
 [Oversampling]:https://blog.naver.com/hajuny2903/222427411561
 [GridSearch_Hyperparameter]:https://www.analyticsvidhya.com/blog/2016/03/complete-guide-parameter-tuning-xgboost-with-codes-python/
+[xgboost_hyperparameter]:https://xgboost.readthedocs.io/en/latest/parameter.html
