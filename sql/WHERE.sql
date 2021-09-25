@@ -15,18 +15,19 @@ SELECT
     COUNT(DISTINCT s.senior_manager_code), 
     COUNT(DISTINCT m.manager_code), 
     COUNT(DISTINCT e.employee_code)
-FROM 
-    Company c, 
-    Lead_Manager l, 
-    Senior_Manager s, 
-    Manager m, 
-    Employee e
-WHERE c.company_code = l.company_code
-     AND l.company_code = s.company_code
-     AND s.company_code = m.company_code
-     AND m.company_code = e.company_code
-GROUP BY c.company_code, c.founder '''C.FOUNDER IS IMPORTANT'''
-ORDER BY c.company_code;
+FROM Company AS c
+INNER JOIN Lead_Manager AS l
+ON c.company_code = l.company_code
+INNER JOIN Senior_Manager AS s
+ON l.company_code = s.company_code
+INNER JOIN Manager AS m
+ON s.company_code = m.company_code
+INNER JOIN Employee AS e
+ON m.company_code = e.company_code
+GROUP BY 
+    c.company_code, c.founder '''FOUNDER IS IMPORTANT'''
+ORDER BY 
+    c.company_code;
 
 ''' ------------------------------------------------------------------------------------------------------------
 NAME : The Report
