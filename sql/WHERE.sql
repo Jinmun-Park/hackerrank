@@ -44,8 +44,7 @@ SELECT
     GRADE, 
     MARKS
 FROM 
-    Students S,
-    Grades G
+    Students S JOIN Grades G
 WHERE ''' IMPORTANT '''
     S.MARKS BETWEEN G.MIN_MARK AND G.MAX_MARK
 ORDER BY
