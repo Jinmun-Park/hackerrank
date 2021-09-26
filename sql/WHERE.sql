@@ -64,7 +64,7 @@ Write a query to print the respective hacker_id and name of hackers who achieved
 SELECT 
     H.HACKER_ID,
     H.NAME
-FROM
+FROM ''' IMPORTANT THE SEQUENCE. SUBMISSION IS THE PRIORITY IN THIS QUESTION '''
     SUBMISSIONS S INNER JOIN CHALLENGES C 
         ON S.CHALLENGE_ID = C.CHALLENGE_ID
     INNER JOIN DIFFICULTY D
