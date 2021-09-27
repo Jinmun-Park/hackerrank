@@ -32,6 +32,20 @@ FROM
 where start_date < end_date
 GROUP BY start_date
 ORDER BY datediff(start_date, MIN(end_date)) DESC, start_date
+
+''' ******************************************************************************************************
+NAME : Symmetric Pairs
+TYPE : Advanced Join
+
+--- 하나의 테이블을 쪼개지 않고 두번 병합하여 GROUP BY + HAVING을 이용하여 컨디션에 맞춤
+--- SAMPLE INPUT을 확인해야 정확한 이해가 가능.
+--- ( ON f1.X=f2.Y AND f1.Y=f2.X ) + ( HAVING COUNT(f1.X)>1 ) 을 통해서 문제에서 주어진 symmetric pairs if (X1 = Y2) and (X2 = Y1)
+'''
+SELECT f1.X, f1.Y FROM Functions f1
+INNER JOIN Functions f2 ON f1.X=f2.Y AND f1.Y=f2.X
+GROUP BY f1.X, f1.Y
+HAVING COUNT(f1.X)>1 or f1.X<f1.Y
+ORDER BY f1.X 
     
 ''' ******************************************************************************************************
 NAME : Top Competitors
