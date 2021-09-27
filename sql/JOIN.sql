@@ -164,3 +164,23 @@ HAVING
 ORDER BY 
     total_score desc, 
     h.hacker_id
+''' ****************************************************************************************************** 
+NAME : Placements
+TYPE : Advanced Join
+
+Write a query to output the names of those students whose best friends got offered a higher salary than them. 
+Names must be ordered by the salary amount offered to the best friends. 
+
+'''
+SELECT s.Name 
+FROM Students as s INNER JOIN Friends as f
+    ON s.ID = f.ID
+INNER JOIN Packages as p 
+    ON s.ID = p.ID 
+INNER JOIN 
+    (SELECT Friends.Friend_ID, Packages.Salary
+    FROM Friends INNER JOIN Packages 
+        ON Friends.Friend_ID = Packages.ID) AS Friend_Salary
+    ON f.Friend_ID = Friend_Salary.Friend_ID
+WHERE Friend_Salary.Salary > p.Salary
+ORDER BY Friend_Salary.Salary
