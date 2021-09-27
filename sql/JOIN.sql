@@ -89,7 +89,7 @@ WHERE P.is_evil = 0 AND (W.coins_needed, P.age, W.power) IN
         W1.power)
 ORDER BY W.power DESC, P.age DESC
 
-''' ****************************************************************************************************** DIFFICULT
+''' ****************************************************************************************************** DIFFICULT (READ EXPLANATION FROM QUESTION)
 NAME : Challenges
 TYPE : Basic Join
 
