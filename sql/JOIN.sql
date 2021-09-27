@@ -72,6 +72,8 @@ EXPLAIN
 Hermione decides the best way to choose is by determining the minimum number of gold galleons needed to buy each non-evil wand of high power and age. 
 Write a query to print the id, age, coins_needed, and power of the wands that Rons interested in, sorted in order of descending power. 
 If more than one wand has same power, sort the result in order of descending age.
+
+-- 최초 SELECT에 GROUPBY가 필요하지 않는 단순 MIN필터로 값을 찾는 문제이기에, WHERE를 이용하여 MATCHING항목만 사용.
 '''
 SELECT W.id, P.age, W.coins_needed, W.power
 FROM WANDS AS W
@@ -98,13 +100,16 @@ Sort your results by the total number of challenges in descending order.
 If more than one student created the *same number of challenges, then sort the result by hacker_id. 
 If more than one student created the *same number of challenges and the count is less than *the maximum number of challenges created, 
 then exclude those students from the result.
+
+--- 최초 SELECT 컬럼에 GROUP BY를 활용한 COUNT(CHALLENGE_ID)가 있으므로 WHERE를 사용하기 어렵다.
+--- HAVING을 이용하려면 최초 SELECT의 컬럼(CHALLENGE_ID)과 HAVING에서 사용하는 컬럼(CHALLENGE_ID)이 추가적인 GROUPBY가 필요하지 않아야한다.
+--- 반면에 Contest Leaderboard의 문제는 원하는 FILTER를 매칭후에도 최초 SELECT에서 합계를 구하여 하므로, SUM(SCORE), HAVING에 적합하지 않다.
 '''
 SELECT h.hacker_id, h.name, COUNT(c.challenge_id) AS challenge_counter
 FROM hackers h
 JOIN challenges c
     ON h.hacker_id = c.hacker_id
 GROUP BY h.hacker_id, h.name
-
 HAVING challenge_counter IN ( '''Condition 1 : unique count of channge_id'''
     SELECT aux_table.counter
     FROM(
@@ -133,6 +138,10 @@ The total score of a hacker is the sum of their maximum scores for all of the ch
 Write a query to print the hacker_id, name, and total score of the hackers ordered by the descending score. 
 If more than one hacker achieved the same total score, then sort the result by ascending hacker_id. 
 Exclude all hackers with a total score of  from your result.
+
+--- 최초 SELECT값에 GROUP BY를 활용하여 SUM(SCORE)를 구하여 하기에, WHERE는 적합하지 않다.
+--- MAX값으로 FILTER후 최초 SELECT에서 다시한번 합계를 구하여 하므로, HAVING에 적합하지 않다.
+
 '''
 SELECT 
     h.hacker_id, 
