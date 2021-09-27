@@ -2,20 +2,8 @@
 NAME : The Report
 TYPE : Basic Join
 
-EXPLAIN
-Ketty doesnt want the NAMES of those students who received a grade lower than 8. The report must be in descending order by grade -- 
-i.e. higher grades are entered first. 
-If there is more than one student with the same grade (8-10) assigned to them, order those particular students by their name alphabetically. 
-Finally, if the grade is lower than 8, use "NULL" as their name and list them by their grades in descending order. 
-If there is more than one student with the same grade (1-7) assigned to them, order those particular students by their marks in ascending order.
-
-ANSWER 
-Maria 10 99
-Jane 9 81
-Julia 9 88 
-Scarlet 8 78
-NULL 7 63
-NULL 7 68
+--- JOIN + WHERE, JOIN을 진행할 공통 컬럼이 없을때 WHERE를 이용하여 하나의 테이블로 병합
+--- 정답에는 AS로 VARIABLE을 칭하지 않았지만, AS로 칭하는것이 좋다. (아래 문제확인)
 '''
 SELECT 
     IF(GRADE < 8, NULL, NAME), 
@@ -30,6 +18,22 @@ ORDER BY
     NAME
 
 ''' ******************************************************************************************************
+NAME : SQL Project Planning
+TYPE : Advanced Join
+
+--- 하나의 테이블을 두개의 테이블로 쪼개서 공통 컬럼 없이 병합하기 위해 JOIN + WHERE를 이용
+--- WHERE 를 이용하지 않고 러닝을 하고 결과를 확인하면 WHERE를 쓰는 이유를 확인할수 있음.
+--- MIN() 이용하여야만 START_DATE에 가장 근접한 END_DATE를 확인할수 있음.
+'''
+SELECT Start_Date, MIN(End_Date)
+FROM 
+    (SELECT Start_Date FROM Projects WHERE Start_Date NOT IN (SELECT End_Date FROM Projects)) a,
+    (SELECT end_date FROM PROJECTS WHERE end_date NOT IN (SELECT start_date FROM PROJECTS)) b
+where start_date < end_date
+GROUP BY start_date
+ORDER BY datediff(start_date, MIN(end_date)) DESC, start_date
+    
+''' ******************************************************************************************************
 NAME : Top Competitors
 TYPE : Basic Join
 
@@ -37,14 +41,6 @@ EXPLAIN
 print the respective hacker_id and name of hackers who achieved full scores for more than one challenge. 
 Order your output in descending order by the total number of challenges in which the hacker earned a full score. 
 If more than one hacker received full scores in same number of challenges, then sort them by ascending hacker_id.
-
-ANSWER 
-Maria 10 99
-Jane 9 81
-Julia 9 88 
-Scarlet 8 78
-NULL 7 63
-NULL 7 68
 '''
 SELECT 
     h.hacker_id, h.name
@@ -74,6 +70,7 @@ Write a query to print the id, age, coins_needed, and power of the wands that Ro
 If more than one wand has same power, sort the result in order of descending age.
 
 -- 최초 SELECT에 GROUPBY가 필요하지 않는 단순 MIN필터로 값을 찾는 문제이기에, WHERE를 이용하여 MATCHING항목만 사용.
+
 '''
 SELECT W.id, P.age, W.coins_needed, W.power
 FROM WANDS AS W
