@@ -114,6 +114,7 @@ If more than one student created the *same number of challenges and the count is
 then exclude those students from the result.
 
 --- 최초 SELECT 컬럼에 GROUP BY를 활용한 COUNT(CHALLENGE_ID)가 있으므로 WHERE를 사용하기 어렵다.
+--- WHERE를 쓰려면 WHERE이후 GROUP BY를 사용하여야 하지만 허용되지 않는다. (기본 콤보 : FROM + WHERE)
 --- HAVING을 이용하려면 최초 SELECT의 컬럼(COUNT(CHALLENGE_ID))과 HAVING에서 사용하는 컬럼(COUNT(CHALLENGE_ID))이 추가적인 GROUPBY가 필요하지 않아야한다.
 --- 반면에 Contest Leaderboard의 문제는 원하는 FILTER후에도 최초 SELECT에서 GROUPBY + SUM을 하여야 하므로 HAVING에 적합하지 않다.
 --- HAVING은 추가적인 GROUP BY를 요구하지 않는 매칭에 활용한다.
