@@ -84,6 +84,7 @@ Write a query to print the id, age, coins_needed, and power of the wands that Ro
 If more than one wand has same power, sort the result in order of descending age.
 
 -- 최초 SELECT에 GROUPBY가 필요하지 않는 단순 MIN필터로 값을 찾는 문제이기에, WHERE를 이용하여 MATCHING항목만 사용.
+-- WHERE는 단순 매칭에 활용한다
 
 '''
 SELECT W.id, P.age, W.coins_needed, W.power
@@ -113,8 +114,10 @@ If more than one student created the *same number of challenges and the count is
 then exclude those students from the result.
 
 --- 최초 SELECT 컬럼에 GROUP BY를 활용한 COUNT(CHALLENGE_ID)가 있으므로 WHERE를 사용하기 어렵다.
---- HAVING을 이용하려면 최초 SELECT의 컬럼(CHALLENGE_ID)과 HAVING에서 사용하는 컬럼(CHALLENGE_ID)이 추가적인 GROUPBY가 필요하지 않아야한다.
---- 반면에 Contest Leaderboard의 문제는 원하는 FILTER를 매칭후에도 최초 SELECT에서 합계를 구하여 하므로, SUM(SCORE), HAVING에 적합하지 않다.
+--- HAVING을 이용하려면 최초 SELECT의 컬럼(COUNT(CHALLENGE_ID))과 HAVING에서 사용하는 컬럼(COUNT(CHALLENGE_ID))이 추가적인 GROUPBY가 필요하지 않아야한다.
+--- 반면에 Contest Leaderboard의 문제는 원하는 FILTER후에도 최초 SELECT에서 GROUPBY + SUM을 하여야 하므로 HAVING에 적합하지 않다.
+--- HAVING은 추가적인 GROUP BY를 요구하지 않는 매칭에 활용한다.
+
 '''
 SELECT h.hacker_id, h.name, COUNT(c.challenge_id) AS challenge_counter
 FROM hackers h
@@ -152,6 +155,7 @@ Exclude all hackers with a total score of  from your result.
 
 --- 최초 SELECT값에 GROUP BY를 활용하여 SUM(SCORE)를 구하여 하기에, WHERE는 적합하지 않다.
 --- MAX값으로 FILTER후 최초 SELECT에서 다시한번 합계를 구하여 하므로, HAVING에 적합하지 않다.
+--- NESTED FROM은 추가적인 GROUP BY가 필요한 매칭에 활용한다.
 
 '''
 SELECT 
