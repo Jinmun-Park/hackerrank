@@ -42,7 +42,7 @@ summary
   - Gives 'Count' and 'Value' in the 'list'
   - [v for i, v in enumerate(iterable, start=1) if not i % 2]
   - myList = [1, 2, 3, 100, 5]
-  - [i[0] for i in sorted(enumerate(myList), key=lambda x:x[1])]
+  - [i[0] for i in sorted(enumerate(myList), key=lambda x:x[1])] *x:x[1]는 Value값을 기준으로 sort
 '''
 ########################################################################################################################
 
