@@ -69,3 +69,52 @@ def countApplesAndOranges(s, t, a, b, apples, oranges):
     
     print(sum([1 for x in apples if (x + a) >= s and (x + a) <= t]))
     print(sum([1 for x in oranges if (x + b) >= s and (x + b) <= t]))
+
+
+########################################################################################################################
+
+'''
+003 : Divisible Sum Pairs
+  Category : Implementation
+  Topic : 
+  Explain : 
+'''
+# INPUT
+'''
+STDIN           Function
+-----           --------
+6 3             n = 6, k = 3
+1 3 2 6 1 2     ar = [1, 3, 2, 6, 1, 2]
+'''
+# OUTPUT
+'''
+ 5
+'''
+
+from itertools import combinations
+def divisibleSumPairs(n, k, ar):
+
+    pairs = [sum(pair) % k for pair in combinations(ar, 2)]
+    return(pairs.count(0))
+########################################################################################################################
+
+'''
+004 : Migratory Birds
+  Category : Implementation
+  Topic : 
+  Explain : 
+'''
+# INPUT
+'''
+6
+1 4 4 4 5 3
+'''
+# OUTPUT
+'''
+4
+'''
+from collections import Counter
+
+def migratoryBirds(arr):
+    bird = Counter(arr)    
+    return bird.most_common(1)[0][0]
