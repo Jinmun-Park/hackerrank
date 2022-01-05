@@ -23,11 +23,13 @@ print list(permutations(['1','2','3']))
 arr = numpy.array(l)
 '''
 [[1 2]
-[3 4]]'''
+[3 4]]
+'''
 tr_arr = numpy.transpose(arr)
 '''
 [[1 3]
-[2 4]]'''
+[2 4]]
+'''
 fl_arr = arr.flatten()
 '''[1 2 3 4]'''
 
