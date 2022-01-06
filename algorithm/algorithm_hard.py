@@ -214,3 +214,37 @@ def getMoneySpent(keyboards, drives, b):
             comb_list.append(-1)
     
     return(max(comb_list))
+########################################################################################################################
+
+'''
+008 : Angry Professor
+  Category : 
+  Topic : 
+  Explain : 
+'''
+# INPUT
+'''
+2
+4 3
+-1 -3 4 2 (--> a)
+4 2
+0 -1 2 1 (--> a)
+'''
+# OUTPUT
+'''
+YES
+NO
+'''
+def angryProfessor(k, a):
+    
+    l = list()
+    n = len(a)
+    
+    for i in range(n):
+        if a[i] < 1:
+            l.append(i)
+    
+    if len(l) < k:
+        return 'YES' '''return text'''
+    else:
+        return 'NO'
