@@ -330,3 +330,38 @@ for i in range(int(input())):
         d.popleft()
 print(*d)
 ########################################################################################################################
+'''
+008 : Climbing the Leaderboard
+'''
+#Input
+'''
+7
+100 100 50 40 40 20 10
+4
+5 25 50 120
+'''
+#Output
+'''
+6
+4
+2
+1
+'''
+def climbingLeaderboard(ranked, player):
+    scores_set = list(set(ranked))
+    scores_set.sort(reverse=True)
+    # 100 90 90 80 75 60
+    # 100 90 80 75 60
+    
+    result = []
+    l = len(scores_set) #5
+    
+    for s in player: # 50 65 77 90 10
+        # 50
+        while (l>0) and (s >= scores_set[l-1]):
+            # 5 > 0 and 50 >= 75 *scores_set[5-1], because of len() and index() 
+            l -= 1
+        result.append(l+1)
+        
+    return result
+########################################################################################################################
