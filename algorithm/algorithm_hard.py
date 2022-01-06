@@ -270,3 +270,33 @@ def beautifulDays(i, j, k):
         if (x - int(str(x)[::-1])) % k == 0: '''[::-1] means opposite, but int(str(x)[::-1]) is the most important'''
             daycount += 1
     return daycount
+########################################################################################################################
+
+'''
+010 : Save the Prisoner!
+  Category : 
+  Topic : 
+  Explain : 
+'''
+# INPUT
+'''
+2
+5 2 1
+5 2 2
+'''
+# OUTPUT
+'''
+2
+3
+'''
+
+'''
+n = 4 -> 1,2,3,4 
+m = 6 -> 2,3,4,1,2,3 (answer is 3)
+s = 2 -> start point 2
+'''
+def saveThePrisoner(n, m, s):
+    if((m + s -1)%n == 0):
+        return(n)
+    else:
+        return ((m+s-1)%n) '''IMPORTANT : remainder is very useful to count again (for ex. 1,2,3)'''
