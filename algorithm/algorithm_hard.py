@@ -352,3 +352,52 @@ def permutationEquation(p):
     for i in range(1,len(p)+1):
         return p.index(p.index(i)+1)+1
         
+########################################################################################################################
+
+'''
+013 : Jumping on the Clouds: Revisited
+  Category : 정답이 이해가 안가
+  Topic : 
+  Explain : 
+'''
+# INPUT
+
+def jumpingOnClouds(c, k):
+    energy = 100 #initial energy
+    i = k % n #initial jump from 0
+    energy -= c[i] * 2 + 1 #initial energy loss
+    while i != 0:
+        i = (i + k) % n
+        energy -= c[i] * 2 + 1
+    
+    return energy
+        
+########################################################################################################################
+
+'''
+014 : Find Digits
+  Category : 
+  Topic : 
+  Explain : 
+'''
+# INPUT
+'''
+2
+12
+1012
+'''
+# OUTPUT
+'''
+2
+3
+'''
+def findDigits(n):
+    number = list(str(n)) '''input is "1012." list(str()) is important'''
+    count = 0
+    for i in range(len(number)):
+        try:
+            if n % int(number[i]) == 0: '''sequence'''
+                count+=1
+        except ZeroDivisionError:
+            pass
+    return count
