@@ -267,6 +267,6 @@ def angryProfessor(k, a):
 def beautifulDays(i, j, k):
     daycount = int(0)
     for x in range(i, j+1):
-        if (x - int(str(x)[::-1])) % k == 0: '''[::-1] means opposite'''
+        if (x - int(str(x)[::-1])) % k == 0: '''[::-1] means opposite, but int(str(x)[::-1]) is the most important'''
             daycount += 1
     return daycount
