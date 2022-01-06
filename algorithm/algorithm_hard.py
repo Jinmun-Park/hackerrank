@@ -338,3 +338,17 @@ def circularArrayRotation(a, k, queries):
     k = len(a) - k '''IMPORTANT'''
     a = a[k:] + a[:k] '''IMPORTANT'''
     return [a[i] for i in queries]
+########################################################################################################################
+
+'''
+012 : Sequence Equation
+  Category : 그냥 외워
+  Topic : 
+  Explain : 
+'''
+# INPUT
+
+def permutationEquation(p):
+    for i in range(1,len(p)+1):
+        return p.index(p.index(i)+1)+1
+        
