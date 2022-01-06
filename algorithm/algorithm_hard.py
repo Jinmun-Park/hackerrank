@@ -96,6 +96,7 @@ def divisibleSumPairs(n, k, ar):
 
     pairs = [sum(pair) % k for pair in combinations(ar, 2)]
     return(pairs.count(0))
+  
 ########################################################################################################################
 
 '''
@@ -118,3 +119,98 @@ from collections import Counter
 def migratoryBirds(arr):
     bird = Counter(arr)    
     return bird.most_common(1)[0][0]
+  
+########################################################################################################################
+
+'''
+005 : Sales by Match
+  Category : 
+  Topic : 
+  Explain : 
+'''
+# INPUT
+'''
+STDIN                       Function
+-----                       --------
+9                           n = 9
+10 20 20 10 10 30 50 10 20  ar = [10, 20, 20, 10, 10, 30, 50, 10, 20]
+'''
+# OUTPUT
+'''
+3
+'''
+from collections import Counter
+
+def sockMerchant(n, ar):
+    odd_count = 0
+    c = Counter(ar)
+    show = [v for i,v in c.items() if v>1]
+    for i in show:
+        count = i//2
+        odd_count += count
+    return odd_count
+    bird = Counter(arr)    
+    return bird.most_common(1)[0][0]
+########################################################################################################################
+
+'''
+006 : Counting Valleys
+  Category : 
+  Topic : 
+  Explain : 
+'''
+# INPUT
+'''
+8
+UDDDUDUU
+'''
+# OUTPUT
+'''
+1
+'''
+# EXPLANATION
+'''
+_/\      _
+   \    /
+    \/\/
+'''
+def countingValleys(steps, path):
+    seaLevel = valley = 0
+
+    for step in path:
+        if step == 'U':
+            seaLevel += 1
+        else:
+            seaLevel -= 1
+        if (step == 'U') and (seaLevel == 0): '''IMPORTANT'''
+            valley += 1
+            
+########################################################################################################################
+
+'''
+007 : Electronics Shop
+  Category : 
+  Topic : 
+  Explain : 
+'''
+# INPUT
+'''
+10 2 3
+3 1
+5 2 8
+'''
+# OUTPUT
+'''
+9
+'''
+def getMoneySpent(keyboards, drives, b):
+    comb = list(itertools.product(keyboards, drives))
+    comb_list = []
+    for i in comb: 
+        s = sum(i)
+        if s <= b : 
+            comb_list.append(s)
+        else : 
+            comb_list.append(-1)
+    
+    return(max(comb_list))
