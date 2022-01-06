@@ -248,3 +248,25 @@ def angryProfessor(k, a):
         return 'YES' '''return text'''
     else:
         return 'NO'
+########################################################################################################################
+
+'''
+009 : Beautiful Days at the Movies
+  Category : 
+  Topic : 
+  Explain : 
+'''
+# INPUT
+'''
+20 23 6
+'''
+# OUTPUT
+'''
+2
+'''
+def beautifulDays(i, j, k):
+    daycount = int(0)
+    for x in range(i, j+1):
+        if (x - int(str(x)[::-1])) % k == 0: '''[::-1] means opposite'''
+            daycount += 1
+    return daycount
