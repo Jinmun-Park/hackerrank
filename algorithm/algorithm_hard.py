@@ -300,3 +300,41 @@ def saveThePrisoner(n, m, s):
         return(n)
     else:
         return ((m+s-1)%n) '''IMPORTANT : remainder is very useful to count again (for ex. 1,2,3)'''
+
+########################################################################################################################
+
+'''
+011 : Circular Array Rotation
+  Category : 
+  Topic : 
+  Explain : 
+'''
+# INPUT
+'''
+3 2 3
+1 2 3
+0
+1
+2
+'''
+# OUTPUT
+'''
+2
+3
+1
+'''
+
+'''
+n = 3, k = 2, q = 3
+n = [1,2,3]
+change the digit k = 2
+[3,1,2] -> [2,3,1] 
+The right format to get this is "len(a) -k"
+"a[k:] + a[:k]"
+'''
+def circularArrayRotation(a, k, queries):
+    if k > len(a):
+        k = k % len(a)
+    k = len(a) - k '''IMPORTANT'''
+    a = a[k:] + a[:k] '''IMPORTANT'''
+    return [a[i] for i in queries]
