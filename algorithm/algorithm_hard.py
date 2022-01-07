@@ -427,3 +427,17 @@ if __name__ == '__main__':
         fptr.write(str(result) + '\n')
 
     fptr.close()
+########################################################################################################################
+
+'''
+015 : Sherlock and Squares
+  Category : 루트 값을 찾아 (그냥외워)
+  Topic : 
+  Explain : 
+'''
+
+def squares(a, b):
+    sqrtA = math.ceil(math.sqrt(a))
+    sqrtB = math.floor(math.sqrt(b))
+    
+    return (sqrtB - sqrtA + 1)
