@@ -550,3 +550,15 @@ if __name__ == '__main__':
     fptr.write(str(result) + '\n')
 
     fptr.close()
+
+########################################################################################################################
+
+'''
+019 : Taum and B'day
+  Category : 질문이 어려워
+  Topic : 
+  Explain : https://www.hackerrank.com/challenges/taum-and-bday/problem?isFullScreen=false
+'''
+
+def taumBday(b, w, bc, wc, z):
+    return b*min(bc, wc+z) + w*min(wc,bc+z)
