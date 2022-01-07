@@ -465,3 +465,23 @@ def libraryFine(d1, m1, y1, d2, m2, y2):
         fine = 0
     
     return fine
+########################################################################################################################
+
+'''
+016 : Cut the sticks
+
+
+  Category : 
+  Topic : 
+  Explain : 
+'''
+
+def cutTheSticks(arr):
+    l = list()
+    l.append(len(arr))
+    while True: '''WHILE 을 쓰질 못함'''                 
+        arr = [x for x in arr if x != min(arr)] 
+        if len(arr)==0:
+            break '''break point'''
+        l.append(len(arr))
+    return l
