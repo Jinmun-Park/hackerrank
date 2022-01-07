@@ -465,6 +465,7 @@ def libraryFine(d1, m1, y1, d2, m2, y2):
         fine = 0
     
     return fine
+  
 ########################################################################################################################
 
 '''
@@ -485,3 +486,29 @@ def cutTheSticks(arr):
             break '''break point'''
         l.append(len(arr))
     return l
+########################################################################################################################
+
+'''
+017 : Repeated String
+  Category : 
+  Topic : 
+  Explain : 
+'''
+#INPUT
+'''
+aba
+10
+'''
+#OUTPUT
+'''
+7
+'''
+'''
+string a 를 세는것이 문재
+aba -> 10digits -> aba aba aba a -> 마지막 a를 세기위해서는 s[:n % len(s)].count("a") -> s[:1] 이부분이 
+'''
+
+def repeatedString(s, n):
+    y = s.count("a") * (n // len(s)) + s[:n % len(s)].count("a")
+    return y
+        
