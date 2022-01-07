@@ -562,3 +562,22 @@ if __name__ == '__main__':
 
 def taumBday(b, w, bc, wc, z):
     return b*min(bc, wc+z) + w*min(wc,bc+z)
+
+########################################################################################################################
+
+'''
+020 : Encryption
+  Category : 쉬운문제
+  Topic : 
+  Explain : https://www.hackerrank.com/challenges/encryption/problem?isFullScreen=false
+'''
+def encryption(s):
+    import math
+    sm=s.strip()
+    r=math.floor(math.sqrt(len(sm)))
+    c=math.ceil(math.sqrt(len(sm)))
+    for i in range(c):
+        return " ".join(map(str, sm[i::c])) '''하지만 map() 이것때문에 못품'''
+
+
+########################################################################################################################
