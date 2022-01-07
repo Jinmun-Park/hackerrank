@@ -441,3 +441,27 @@ def squares(a, b):
     sqrtB = math.floor(math.sqrt(b))
     
     return (sqrtB - sqrtA + 1)
+########################################################################################################################
+
+'''
+016 : Library Fine
+  Category : 
+  Topic : 
+  Explain : 
+'''
+
+def libraryFine(d1, m1, y1, d2, m2, y2):
+    day = d2 - d1
+    month = m2 - m1
+    year = y2 - y1
+    
+    if year < 0:
+        fine = 10000
+    elif (year == 0) and (month < 0):
+        fine = abs(month) * 500
+    elif (year == 0) and (month == 0) and (day < 0): '''FORGOT TO PUT (day < 0) '''
+        fine = abs(day) * 15
+    else:
+        fine = 0
+    
+    return fine
