@@ -95,7 +95,7 @@ from itertools import combinations
 def divisibleSumPairs(n, k, ar):
 
     pairs = [sum(pair) % k for pair in combinations(ar, 2)]
-    return(pairs.count(0))
+    return(pairs.count(0)) '''divisible is 0'''
   
 ########################################################################################################################
 
@@ -149,8 +149,7 @@ def sockMerchant(n, ar):
         count = i//2
         odd_count += count
     return odd_count
-    bird = Counter(arr)    
-    return bird.most_common(1)[0][0]
+
 ########################################################################################################################
 
 '''
@@ -207,7 +206,7 @@ def getMoneySpent(keyboards, drives, b):
     comb = list(itertools.product(keyboards, drives))
     comb_list = []
     for i in comb: 
-        s = sum(i)
+        s = sum(i) ''' sum the combination '''
         if s <= b : 
             comb_list.append(s)
         else : 
@@ -301,6 +300,10 @@ def saveThePrisoner(n, m, s):
     else:
         return ((m+s-1)%n) '''IMPORTANT : remainder is very useful to count again (for ex. 1,2,3)'''
 
+'''
+print(2%8) = 2
+print(7%4) = 3
+'''
 ########################################################################################################################
 
 '''
@@ -356,12 +359,21 @@ def permutationEquation(p):
 
 '''
 013 : Jumping on the Clouds: Revisited
-  Category : 정답이 이해가 안가
+  Category : 처음에 정답이 이해가 안갔고, 나중에 했는데도 어떻게 이 답이 나왔는지 
   Topic : 
   Explain : 
 '''
 # INPUT
-
+'''
+STDIN             Function
+-----             --------
+8 2               n = 8, k = 2
+0 0 1 0 0 1 1 0   c = [0, 0, 1, 0, 0, 1, 1, 0]
+'''
+# OUTPUT
+'''
+92
+'''
 def jumpingOnClouds(c, k):
     energy = 100 #initial energy
     i = k % n #initial jump from 0
@@ -392,7 +404,7 @@ def jumpingOnClouds(c, k):
 3
 '''
 def findDigits(n):
-    number = list(str(n)) '''input is "1012." list(str()) is important'''
+    number = list(str(n)) '''input is "1012." list(str()) is important -> ['1','2,','3','4']'''
     count = 0
     for i in range(len(number)):
         try:
@@ -401,3 +413,17 @@ def findDigits(n):
         except ZeroDivisionError:
             pass
     return count
+  
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    t = int(input().strip())
+
+    for t_itr in range(t):
+        n = int(input().strip())
+
+        result = findDigits(n)
+
+        fptr.write(str(result) + '\n')
+
+    fptr.close()
