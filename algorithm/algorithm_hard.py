@@ -512,3 +512,41 @@ def repeatedString(s, n):
     y = s.count("a") * (n // len(s)) + s[:n % len(s)].count("a")
     return y
         
+########################################################################################################################
+
+'''
+018 : Jumping on the Clouds
+  Category : 걍 억지로 맞추는거
+  Topic : 
+  Explain : 
+'''
+#INPUT
+'''
+[0 0 1 0 0 1 0]
+'''
+#OUTPUT
+'''
+4
+'''
+
+def jumpingOnClouds(c):
+    c = [str(s) for s in c] '''[0, 0, 1 ,,,] 이거를 ['0', '0'. '1']'''
+    c = ''.join(c) 
+    jump = c.count('1') '''COUNT'''
+    c = c.split('1') '''1만 빼고 ['00', '0']'''
+    for seg in c:
+        jump+=len(seg)//2 '''애휴'''
+    return jump
+  
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    c = list(map(int, input().rstrip().split()))
+
+    result = jumpingOnClouds(c)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
