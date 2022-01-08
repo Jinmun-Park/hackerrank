@@ -19,7 +19,7 @@ def count_substring(string, sub_string):
     count = 0
     start = 0
     while True:
-        '''IMPORTANT'''
+        '''IMPORTANT : "find(value,start,end)" finds the first occurrence of the specified value.'''
         start = string.find(sub_string, start+1)  #substring index will move (0) (1) (2) 
         if start > 0:
             count+=1
