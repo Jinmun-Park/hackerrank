@@ -357,11 +357,12 @@ def climbingLeaderboard(ranked, player):
     l = len(scores_set) #5
     
     for s in player: # 50 65 77 90 10
-        # 50
-        while (l>0) and (s >= scores_set[l-1]):
-            # 5 > 0 and 50 >= 75 *scores_set[5-1], because of len() and index() 
-            l -= 1
-        result.append(l+1)
+    
+        scores_set.append(s)
+        scores_set = list(set(scores_set))
+        scores_set.sort(reverse=True)
+        
+        result.append(scores_set.index(s)+1)
         
     return result
 ########################################################################################################################
