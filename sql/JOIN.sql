@@ -1,8 +1,16 @@
 ''' ******** REFERENCE ********
-SELECT ANIMAL_ID, NAME, SEX_UPON_INTAKE
-FROM ANIMAL_INS
+WHERE I.ANIMAL_ID = O.ANIMAL_ID AND I.SEX_UPON_INTAKE != O.SEX_UPON_OUTCOM
 WHERE NAME IN ('Lucy','Ella','Pickle','Rogan','Sabrina','Mitty')
-ORDER BY ANIMAL_ID;
+WHERE LOWER(NAME) LIKE '%el%' AND ANIMAL_TYPE IN ('Dog')
+
+SELECT ANIMAL_ID, NAME, 
+    CASE
+        WHEN SEX_UPON_INTAKE LIKE '%Neutered%' OR SEX_UPON_INTAKE LIKE '%Spayed%'
+            THEN 'O'
+        ELSE 'X' 
+    END 
+
+SELECT DATE_FORMAT(DATETIME, '%Y-%m-%d')
 ''' ******** REFERENCE ********
 
 ''' ******************************************************************************************************
