@@ -67,7 +67,7 @@ def absolutePermutation(n, k):
         if 1<=i+k<=n:
             res.append(i+k)
         if k!=0 and i%k==0: '''IMPORTANT : Condition 2. when this condition meets when pos[i] = 0. Example) n = [2] k = [2]'''
-            k*=-1 '''IMPORTANT : pos[i] = 0 element will not show in the list. This will be filtered out **len(res)!=n'''
+            k=(-1)*k '''IMPORTANT : pos[i] = 0 element will not show in the list. This will be filtered out **len(res)!=n'''
     if len(res)!=n:'''IMPORTANT : The way to put n constraints on your pos[i] where pos[i] should be in the range of n'''
         return [-1]
     return res 
