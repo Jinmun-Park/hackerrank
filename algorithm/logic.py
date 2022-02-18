@@ -272,7 +272,7 @@ Output
 import itertools
 
 def getMoneySpent(keyboards, drives, b):
-    comb = list(itertools.product(keyboards, drives)) '''IMPORTANT'''
+    comb = list(itertools.product(keyboards, drives)) '''IMPORTANT : [(3, 5), (3, 2), (3, 8), (1, 5), (1, 2), (1, 8)]'''
     # Two lists can have a combination using 'product'
     comb_list = []
     for i in comb: 
