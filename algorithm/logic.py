@@ -189,15 +189,15 @@ Output
 '''
 
 def sockMerchant(n, ar):
-    count = Counter(ar)
-    c = 0
-    for i,v in count.items(): # v is number of count
-        if v % 2 == 0:
-            c+=(v/2)
-        elif (v % 2 != 0) and (v > 1):
-            c+=((v-1)/2)
-    return int(c)
-    #return ([i for i,v in count.items() if v % 2==0])
+    odd_count = 0
+    c = Counter(ar)
+    show = [v for i,v in c.items() if v>1]
+    
+    for i in show:
+        count = i//2
+        odd_count += count
+        
+    return odd_count
 ########################################################################################################################
 '''
 006 : [Comming from Implementation] Drawing Book
