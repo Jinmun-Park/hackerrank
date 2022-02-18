@@ -162,8 +162,8 @@ Output
 from collections import Counter
 
 def migratoryBirds(arr):
-    #a = sorted(counter.most_common(1)[0], reverse = True)[0] Fail i dont know why
-    return(Counter(sorted(arr)).most_common(1)[0][0])
+    bird = Counter(sorted(arr))
+    return bird.most_common(1)[0][0]
   
 ########################################################################################################################
 '''
