@@ -32,6 +32,13 @@ if __name__ == '__main__':
     
     count = count_substring(string, sub_string)
     print(count)
+
+def count_substring(string, sub_string):
+    count = 0
+    for i in range(len(string)):
+        if string[i:].startswith(sub_string):
+            count += 1
+    return count
 ########################################################################################################################
 '''
 009 : The Minion Game
